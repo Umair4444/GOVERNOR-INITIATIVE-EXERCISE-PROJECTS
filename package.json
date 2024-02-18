@@ -1,0 +1,18 @@
+{
+  "name": "governor-initiative-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "11.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Umair Ali Khan",
+  "license": "ISC",
+  "dependencies": {
+    "compiler": "^0.1.2",
+    "includes": "^0.0.7",
+    "lib": "^5.1.0",
+    "option": "^0.2.4",
+    "target": "^0.0.2"
+  }
+}
