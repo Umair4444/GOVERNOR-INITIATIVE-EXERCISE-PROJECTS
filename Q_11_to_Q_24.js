@@ -167,8 +167,8 @@ var movies = [
 ];
 // Print the list of movie objects
 console.log("List of Movie Objects:", movies);
-console.log("List of Movie Objects:", movies[0]);
-console.log("List of Movie Objects:", movies[0].title);
+console.log("List of Movie at index 0 is :", movies[0]);
+console.log("List of Movie at index 0 is with title :", movies[0].title);
 console.log("______________________________________________________________________________");
 // console.log(movieTitles[6]); // error because only 0-5 index are allowed
 console.log(movieTitles[2]);
@@ -217,10 +217,12 @@ console.log(numa > numb || numa < numb); //true
 console.log(numa < numb || numa > numb); //true
 console.log(!(numa > numb)); //true
 console.log(!(numa < numb)); //false
+console.log("______________________________________________________");
 var mountain_array = ["K2", "EVEREST", "FUJI", "HIMALYAS"];
 var found = false;
-// print all value to check found and not found
+// // // print all value to check found and not found
 // for (let i=0;i<mountain_array.length;i++){
+//   // console.log(mountain_array[i] == "FUJI"); // WILL WORK SAME AS IF ELSE STATEMENT
 // if(mountain_array[i] === "FUJI") {
 //   console.log("FOUND IT");
 // }else{console.log("NOT FOUND");}
@@ -237,6 +239,7 @@ if (found) {
 else {
     console.log("NOT FOUND");
 }
+found = false; // resetting value to false BEACAUSE FOUND IS SET TO TRUE AFTER ABOVE OPERATION
 for (var i = 0; i < mountain_array.length; i++) {
     if (mountain_array[i] === "K3") {
         found = true;
