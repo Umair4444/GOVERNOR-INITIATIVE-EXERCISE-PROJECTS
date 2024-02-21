@@ -1,8 +1,8 @@
 {
   "name": "governor-initiative-exercise",
   "version": "1.0.0",
-  "description": "",
   "main": "11.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +11,17 @@
   "dependencies": {
     "compiler": "^0.1.2",
     "includes": "^0.0.7",
+    "inquirer": "^9.2.15",
     "lib": "^5.1.0",
     "option": "^0.2.4",
+    "prompt": "^1.3.0",
+    "prompt-sync": "^4.2.0",
     "target": "^0.0.2"
-  }
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/prompt": "^1.1.8"
+  },
+  "keywords": [],
+  "description": ""
 }

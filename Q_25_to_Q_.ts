@@ -227,3 +227,73 @@ check_username(["selena"]);
 console.log(
   "____________________________________________________________________"
 );
+
+// QUESTION NO.33 ORDINAL NUMBERS
+let my_number: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// console.log(my_number[1]);
+
+for (let i = 0; i < my_number.length; i++) {
+  if (my_number[i] == 1) {
+    console.log(`${my_number[i]}st`);
+  } else if (my_number[i] == 2) {
+    console.log(`${my_number[i]}nd`);
+  } else if (my_number[i] == 3) {
+    console.log(`${my_number[i]}rd`);
+  } else {
+    console.log(`${my_number[i]}th`);
+  }
+}
+
+console.log(
+  "____________________________________________________________________"
+);
+
+// QUESTION NO.34 PIZZAS
+let pizza_flavor: string[] = [
+  "Arabian",
+  "Paparoni",
+  "Fajita",
+  "B.B.Q",
+  "Tikka",
+];
+
+for (let i = 0; i < pizza_flavor.length; i++) {
+  console.log(`I like ${pizza_flavor[i]} pizza`);
+}
+
+// let my_favorite = pizza_flavor.map((food) => {
+//   return food;
+// });
+
+console.log(
+  "I love eating pizza on weekend with my friends.",
+  pizza_flavor[3],
+  "is my favorite flavor and I can eat it everyday "
+);
+
+console.log(
+  "____________________________________________________________________"
+);
+
+// QUESTION NO.35 ANIMALS
+
+let my_pets = ["Dog", "Cat", "horse", "parrot"];
+
+for (let i = 0; i < my_pets.length; i++) {
+  const element = my_pets[i];
+  console.log(element);
+}
+for (let j = 0; j < my_pets.length; j++) {
+  console.log(`The ${my_pets[j]} is a very friendly animal`);
+}
+console.log(
+  "Any pet such as,",
+  my_pets.toString(),
+  "bring joy, companionship, and a sense of responsibility into our lives"
+);
+
+console.log(
+  "____________________________________________________________________"
+);
+
+// QUESTION NO.36 T-SHIRT

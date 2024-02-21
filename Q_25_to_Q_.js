@@ -107,20 +107,20 @@ console.log("___________________________________________________________________
 var favorite_fruits = ["Apple", "Orange", "Mango"];
 console.log(favorite_fruits);
 for (var i = 0; i < favorite_fruits.length; i++) {
-    if (favorite_fruits[i] === "mango") {
+    if (favorite_fruits[i] === "banana") {
         console.log("You really like bananas!");
     }
     if (favorite_fruits[i] === "Apple") {
         console.log("You really like apples!");
     }
-    if (favorite_fruits[i] === "strawberry") {
+    if (favorite_fruits[i] === "Strawberry") {
         console.log("You really like strawberries!");
     }
     if (favorite_fruits[i] === "Orange") {
         console.log("You really like oranges!");
     }
     if (favorite_fruits[i] === "Mango") {
-        console.log("You really like kiwis!");
+        console.log("You really like mango!");
     }
 }
 console.log("__________________________________________________________________________");
@@ -161,7 +161,7 @@ else {
     }
 }
 console.log("__________________________________________________________________________");
-// QUESTION 
+// QUESTION NO.32  LOG_IN_STATEMENT
 var current_username = [
     "Umair",
     "Azhar",
@@ -192,3 +192,60 @@ check_username(["umair"]);
 check_username(["Umair"]);
 check_username(["selena"]);
 console.log("____________________________________________________________________");
+// QUESTION NO.33 ORDINAL NUMBERS
+var my_number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// console.log(my_number[1]);
+for (var i = 0; i < my_number.length; i++) {
+    if (my_number[i] == 1) {
+        console.log("".concat(my_number[i], "st"));
+    }
+    else if (my_number[i] == 2) {
+        console.log("".concat(my_number[i], "nd"));
+    }
+    else if (my_number[i] == 3) {
+        console.log("".concat(my_number[i], "rd"));
+    }
+    else {
+        console.log("".concat(my_number[i], "th"));
+    }
+}
+console.log("____________________________________________________________________");
+// QUESTION NO.34 PIZZAS
+var pizza_flavor = [
+    "Arabian",
+    "Paparoni",
+    "Fajita",
+    "B.B.Q",
+    "Tikka",
+];
+for (var i = 0; i < pizza_flavor.length; i++) {
+    console.log("I like ".concat(pizza_flavor[i], " pizza"));
+}
+// let my_favorite = pizza_flavor.map((food) => {
+//   return food;
+// });
+console.log("I love eating pizza on weekend with my friends.", pizza_flavor[3], "is my favorite flavor and I can eat it everyday ");
+console.log("____________________________________________________________________");
+// QUESTION NO.35 ANIMALS
+var my_pets = ["Dog", "Cat", "horse", "parrot"];
+for (var i = 0; i < my_pets.length; i++) {
+    var element = my_pets[i];
+    console.log(element);
+}
+for (var j = 0; j < my_pets.length; j++) {
+    console.log("The ".concat(my_pets[j], " is a very friendly animal"));
+}
+console.log("Any pet such as,", my_pets.toString(), "bring joy, companionship, and a sense of responsibility into our lives");
+console.log("____________________________________________________________________");
+// QUESTION NO.36 T-SHIRT
+// import inquirer from "inquirer";
+// import prompt from "prompt"
+// const your_size = inquirer.prompt({
+//   type: "input",
+//   name: "size",
+//   message: "please enter size of your choice",
+// });
+// // console.log(your_size);
+var prompt = require("prompt-sync")();
+var number2 = prompt("enter");
+console.log(number2);
