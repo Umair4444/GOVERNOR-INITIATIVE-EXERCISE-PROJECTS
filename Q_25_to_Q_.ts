@@ -297,3 +297,51 @@ console.log(
 );
 
 // QUESTION NO.36 T-SHIRT
+
+import promptSync from "prompt-sync";
+
+let prompt = promptSync();
+
+let shirt_size_input: string = prompt("enter your desired size : ");
+let shirt_size: number = parseInt(shirt_size_input, 10);
+
+let shirt_message: string = prompt("enter your message : ");
+
+function Make_shirt(size: number, message: string) {
+  console.log("your size is :", size, "and your message is :", message);
+}
+
+Make_shirt(shirt_size, shirt_message);
+
+console.log(
+  "____________________________________________________________________"
+);
+
+// QUESTION NO.37 T-SHIRT
+
+function Make_shirt_2(
+  size: string = "large",
+  message: string = "I love TypeScript"
+) {
+  console.log(`Your size is: ${size} and your message is: ${message}`);
+}
+
+// Make a shirt of any size with a different message
+let shirt_size_input_2: string = prompt("Enter your desired size: ");
+// let shirt_size: string = shirt_size_input.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+
+// Make a large shirt with the default message
+Make_shirt_2();
+
+// Make a medium shirt with the default message
+Make_shirt_2("medium");
+
+let shirt_message_2: string = prompt("Enter your message: ");
+
+Make_shirt_2(shirt_size_input_2, shirt_message_2);
+
+console.log(
+  "____________________________________________________________________"
+);
+
+// QUESTION NO.38 CITIES

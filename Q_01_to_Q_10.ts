@@ -88,11 +88,11 @@ console.log(
 
 console.log(5 + 3);
 console.log("_____________________________________");
-console.log(5 + 3);
+console.log(13-5);
 console.log("_____________________________________");
-console.log(5 + 3);
+console.log(80 / 10);
 console.log("_____________________________________");
-console.log(5 + 3);
+console.log(4 * 2);
 console.log("_____________________________________");
 
 let fav_num: number = 44; // my favourite number
