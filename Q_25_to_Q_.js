@@ -268,3 +268,74 @@ let shirt_message_2 = prompt("Enter your message: ");
 Make_shirt_2(shirt_size_input_2, shirt_message_2);
 console.log("____________________________________________________________________");
 // QUESTION NO.38 CITIES
+//Cities: Write a function called describe_city() that accepts the name of
+// a city and its country. The function should print a simple sentence, such as
+// Karachi is in Pakistan. Give the parameter for the country a default value.
+// Call your function for three different cities, at least one of which is not in the
+// default country.
+function describe_city(city, country = "Pakistan") {
+    console.log(city, "is in", country);
+}
+describe_city("Karachi");
+describe_city("islamabad");
+describe_city("Lahore");
+describe_city("London", "England");
+describe_city("New York", "U.S.A");
+console.log("____________________________________________________________________");
+// QUESTION NO.39 CITY NAMES
+//import promptSync from "prompt-sync";
+//let prompt = promptSync();
+let User_input_data = [];
+for (let i = 0; i < 3; i++) {
+    let city_name = prompt("your city name: ");
+    let country_name = prompt("your country name: ");
+    let city_country = (city_name, country_name) => {
+        console.log(`"${city_name},${country_name}"`); // my format to show input by user
+        return `${city_name}, ${country_name}`; // will return value outside loop
+    };
+    User_input_data.push(city_country(city_name, country_name)); // takes your input here as paramaeter and show in an array
+}
+console.log(User_input_data);
+console.log("____________________________________________________________________");
+function make_album(artist, name, track) {
+    let my_info = {
+        album_artist: artist,
+        album_name: name,
+        album_track: track,
+    };
+    console.log(my_info);
+    return my_info;
+}
+make_album("Demilovato", "confident");
+make_album("Becky G", "Shower");
+make_album("Michael Jackson", "Dangerous", 1);
+console.log("____________________________________________________________________");
+// QUESTION NO.41 MAGICIANS
+let magicians_names = [
+    "Chris Angel",
+    "David Blaine",
+    "David Copperfield",
+];
+function show_magicians() {
+    console.log(`${magicians_names},`);
+}
+// console array on a singel line
+show_magicians();
+// applying for each
+function show_magicians_1(magician) {
+    magician.forEach((magician) => {
+        console.log(`${magician}`);
+    });
+}
+console.log("using for each loop");
+// console array using foreach loops
+show_magicians_1(magicians_names);
+console.log("____________________________________________________________________");
+// QUESTION NO.42 GREAT MAGICIANS
+let great_magicians = () => {
+    for (let i = 0; i < magicians_names.length; i++) {
+        console.log(`The Great ${magicians_names[i]}`);
+    }
+};
+great_magicians();
+show_magicians();
