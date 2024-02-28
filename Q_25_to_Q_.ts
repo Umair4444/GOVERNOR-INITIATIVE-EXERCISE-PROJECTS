@@ -422,23 +422,25 @@ let magicians_names: string[] = [
   "Chris Angel",
   "David Blaine",
   "David Copperfield",
+  "Merlin",
 ];
 
 function show_magicians() {
-  console.log(`${magicians_names},`);
+  console.log(`${magicians_names}`);
 }
 // console array on a singel line
 show_magicians();
 
 // applying for each
-function show_magicians_1(magician: string[]): void {
+function show_magicians_1(magician: string[]) {
   magician.forEach((magician) => {
     console.log(`${magician}`);
   });
+  return magician;
 }
-console.log("using for each loop");
+console.log("****** using for each loop *******");
 // console array using foreach loops
-show_magicians_1(magicians_names);
+const original_arr = show_magicians_1(magicians_names);
 
 console.log(
   "____________________________________________________________________"
@@ -446,10 +448,73 @@ console.log(
 
 // QUESTION NO.42 GREAT MAGICIANS
 
-let great_magicians = () :void=> {
+let great_magicians = () => {
+  let new_magician = [];
   for (let i = 0; i < magicians_names.length; i++) {
     console.log(`The Great ${magicians_names[i]}`);
+    new_magician.push(`the great, ${magicians_names[i]}`);
   }
+  return new_magician;
 };
 
-great_magicians()
+const new_arr = great_magicians();
+
+console.log(
+  "____________________________________________________________________"
+);
+
+// QUESTION NO.43 UNCHANGED MAGICIANS
+
+//my original array
+console.log("original arr : ", original_arr);
+
+// my new array with the great word added to arrays strings
+
+console.log("new arr : ", new_arr);
+
+console.log(
+  "____________________________________________________________________"
+);
+
+// QUESTION NO.44 SANDWICH
+
+function sandwich(...orders: string[]) {
+  const myorder = [];
+  console.log(`"My Order is : ",${orders}`);
+  myorder.push(...orders);
+  return myorder;
+}
+
+let result_order = sandwich(
+  "Club Sandwich",
+  " Grill Sandwich with Chesse",
+  " Shahi Toast",
+  " Chicken Sandwich"
+);
+
+console.log(result_order[2]);
+
+console.log(
+  "____________________________________________________________________"
+);
+
+// QUESTION NO.44 CARS
+
+function cars(
+  manufacture: string,
+  model: string | number,
+  color?: string,
+  open_top?: boolean
+) {
+  let info = {
+    Manufacturer: manufacture,
+    Model: model,
+    Color: color || "NO Preference",
+    Roof_Top: open_top || false,
+  };
+  console.log(info);
+}
+
+cars("Ferrari", 2024);
+cars("Bugati", 2023, "Black", false);
+cars("Lamborghini", 2024, "Red", true);
