@@ -365,8 +365,8 @@ function cars(manufacture, model, color, open_top) {
     let info = {
         Manufacturer: manufacture,
         Model: model,
-        Color: (color || "NO Preference"),
-        Roof_Top: (open_top || false),
+        Color: color || "NO Preference",
+        Roof_Top: open_top || false,
     };
     console.log(info);
 }
