@@ -298,7 +298,7 @@ console.log(
 
 // QUESTION NO.36 T-SHIRT
 
-import promptSync from "prompt-sync";
+import * as promptSync from "prompt-sync";
 
 let prompt = promptSync();
 
