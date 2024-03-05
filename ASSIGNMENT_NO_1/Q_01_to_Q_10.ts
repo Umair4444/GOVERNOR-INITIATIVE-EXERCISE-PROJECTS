@@ -17,6 +17,7 @@ console.log(`hello, ${my_name.toLowerCase()}, how are you doing`);
 console.log(my_name);
 console.log(my_name.toLowerCase()); // convert to lowercase
 console.log(my_name.toUpperCase()); // convert ot uppercase
+console.log(my_name.slice(0,1).toUpperCase() + my_name.slice(1,5).toLowerCase()); // title case
 
 // convert to uppercase through function
 function convert_to_string(input_str: string): string {
@@ -24,7 +25,6 @@ function convert_to_string(input_str: string): string {
 }
 console.log(convert_to_string(my_name)); // pass arg here for function to perform
 
-// title case
 console.log(
   "_______________________________________________________________________________"
 );
