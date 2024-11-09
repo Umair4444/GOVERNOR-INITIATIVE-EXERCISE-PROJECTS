@@ -218,9 +218,9 @@ Download.addEventListener("click", async () => {
     let opt = {
         margin: [0, 0, 0, 0], // Reduces white space
         filename: "Resume.pdf",
-        html2canvas: { scale: 2 }, // Improves quality
+        html2canvas: { scale: 1 }, // Improves quality
         scrollY: 0, // Fixes any scrolling issues
-        jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+        jsPDF: { unit: "pt", format: "a4", orientation: "portrait" },
     };
     console.log(opt);
     Download.innerText = "Generating PDF...";

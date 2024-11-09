@@ -266,29 +266,27 @@ body {
 }
 
 #resume-hobby-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-  /* justify-content: space-between; */
-  justify-items: center;
+  display: flex;
+  flex-direction: row;
 }
 
 #resume-hobby-container ul {
   margin-top: 10px;
-  width: 300px;
+  width: fit-content;
   height: max-content;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 2px 70px;
+  justify-content: space-evenly;
+  padding: 4px 10px;
   box-shadow: inset 0px 0px 10px 2px rgb(229, 162, 80);
-  scale: 0.7;
+  scale: 0.8;
 }
 
 #resume-hobby-container ul li {
-  width: 100%;
+  width: fit-content;
   height: max-content;
+  list-style: none;
+  text-transform: capitalize;
 }
 
 /* Skill Entry Container */
@@ -397,18 +395,6 @@ button.remove-skill:hover {
 .Profile-skills .Skill-box:last-child {
   margin-bottom: 20px;
   /* background-color: aqua; */
-}
-
-.Profile-intrest ul {
-  /* width: 100%; */
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  /* border: 2px solid; */
-}
-.Profile-intrest ul li {
-  list-style: none;
-  font-weight: 600;
-  margin: 10px 0;
 }
 
 .profile-btns {
