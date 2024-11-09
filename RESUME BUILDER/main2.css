@@ -6,7 +6,7 @@
 
 body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #d97676;
+  background-color: #ece3e3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,6 +85,8 @@ body {
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
+  border: 2px solid brown;
+  scale: 0.9;
 }
 
 .Profile .Name {
@@ -262,13 +264,40 @@ body {
 .Box .Text p {
   font-size: 1rem;
 }
+
+#resume-hobby-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  /* justify-content: space-between; */
+  justify-items: center;
+}
+
+#resume-hobby-container ul {
+  margin-top: 10px;
+  width: 300px;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 70px;
+  box-shadow: inset 0px 0px 10px 2px rgb(229, 162, 80);
+  scale: 0.7;
+}
+
+#resume-hobby-container ul li {
+  width: 100%;
+  height: max-content;
+}
+
 /* Skill Entry Container */
 #skill-container {
   max-width: 600px;
   /* margin: 20px auto; */
-  padding: 3px 4px;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
+  padding: 3px 5px;
+  background-color: transparent;
+  border: 1px transparent;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

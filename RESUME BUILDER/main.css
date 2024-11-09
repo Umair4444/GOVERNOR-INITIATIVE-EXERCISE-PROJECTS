@@ -118,31 +118,12 @@ fieldset {
   gap: 2px;
 }
 
-.skill,
-.resume.skill-container {
+.intrests {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
-}
-/* 
-.resume-skill-bar {
-  background-color: #3f7941;
-  height: 10px;
-  border-radius: 5px;
-  position: relative;
-} */
-
-/* .resume-skill-bar span {
-  position: relative;
-  font-size: 12px;
-  color: #333;
-} */
-
-.intrests {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  margin-top: 10px;
+  gap: 3px;
 }
 
 button {
@@ -204,7 +185,7 @@ button.btns {
     max-width: 100%;
     margin: 20px auto 10px;
     /* border: 2px solid; */
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     padding-left: 20%;
   }
 
@@ -222,11 +203,10 @@ button.btns {
   }
 }
 
-@media  (max-width: 445px){
-  .btns-div{
+@media (max-width: 445px) {
+  .btns-div {
     margin: 0;
     display: flex;
     flex-direction: column;
   }
 }
-
