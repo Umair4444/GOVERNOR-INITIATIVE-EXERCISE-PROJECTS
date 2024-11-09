@@ -3,193 +3,195 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Resume</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>My-Resume</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="main2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   </head>
+
   <body>
     <div class="container">
-      <div class="left-side">
-        <div class="profile">
-          <div class="image">
-            <img src="img.png" alt="Image" />
-          </div>
-          <h2 class="name">Umair Ali Khan <span>Web Developer</span></h2>
-        </div>
-        <div class="contact-info">
-          <h3 class="title">Contact Info</h3>
-          <ul>
-            <li>
-              <span class="icon"><i>logo</i></span>
-              <span class="text">+92 123-456-789</span>
-            </li>
-            <li>
-              <span class="icon"><i>logo</i></span>
-              <span class="text">theumairkhan44@gmail.com</span>
-            </li>
-            <li>
-              <span class="icon"><i>logo</i></span>
-              <span class="text">www.resume.com</span>
-            </li>
-            <li>
-              <span class="icon"><i>logo</i></span>
-              <span class="text">www.linkedin.com</span>
-            </li>
-            <li>
-              <span class="icon"><i>logo</i></span>
-              <span class="text">www.github.com</span>
-            </li>
-            <li>
-              <span class="icon"><i>logo</i></span>
-              <span class="text">Karachi Pakistan</span>
-            </li>
-          </ul>
-        </div>
+      <form action="#" id="resumeForm">
+        <fieldset class="main">
+          <legend style="margin: 15px 0px">Resume Details</legend>
 
-        <div class="education">
-          <div class="title">Education</div>
-          <ul>
-            <li>
-              <h5>2010 -2014</h5>
-              <h4>Master in Communication</h4>
-              <h4>University Name</h4>
-            </li>
-            <li>
-              <h5>2010 -2014</h5>
-              <h4>Master in Communication</h4>
-              <h4>University Name</h4>
-            </li>
-            <li>
-              <h5>2010 -2014</h5>
-              <h4>Master in Communication</h4>
-              <h4>University Name</h4>
-            </li>
-          </ul>
-        </div>
+          <fieldset class="img-info">
+            <legend>Personal Details</legend>
+            <input type="file" name="image" id="profile_image" />
+            <div class="personal-info">
+              <input type="text" placeholder="Your Name" id="my_name" />
+              <input
+                type="text"
+                placeholder="Your Profession"
+                id="profession"
+              />
+            </div>
+          </fieldset>
 
-        <div class="languages">
-          <div class="title">Languages</div>
-          <ul>
-            <li>
-              <span class="text">English</span>
-              <span class="percent">
-                <div style="width: 60%"></div>
-              </span>
-            </li>
-            <li>
-              <span class="text">English</span>
-              <span class="percent">
-                <div style="width: 90%"></div>
-              </span>
-            </li>
-            <li>
-              <span class="text">English</span>
-              <span class="percent">
-                <div style="width: 70%"></div>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="right-side">
-        <div class="profile2">
-          <div class="title2">Profile</div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque omnis
-            temporibus exercitationem vero ducimus totam autem excepturi iure
-            voluptates aut quod reprehenderit, provident iusto, odio, tenetur
-            quae quisquam ullam dolore optio aliquam maxime soluta! Eaque
-            laudantium mollitia corporis nihil sunt.
-          </p>
-        </div>
-        <div class="profile2">
-          <div class="title2">Experience</div>
-          <div class="box">
-            <div class="year-company">
-              <h5>1990 - Present</h5>
-              <h5>Company Name</h5>
-            </div>
-            <div class="text">
-              <h4>My Position At work</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla,
-                porro.
-              </p>
-            </div>
-          </div>
-          <div class="box">
-            <div class="year-company">
-              <h5>1990 - Present</h5>
-              <h5>Company Name</h5>
-            </div>
-            <div class="text">
-              <h4>My Position At work</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla,
-                porro.
-              </p>
-            </div>
-          </div>
-          <div class="box">
-            <div class="year-company">
-              <h5>1990 - Present</h5>
-              <h5>Company Name</h5>
-            </div>
-            <div class="text">
-              <h4>My Position At work</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla,
-                porro.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="profile-skills profile2">
-          <div class="title2">Professional Skills</div>
+          <fieldset>
+            <legend>
+              Contact-Info
+              <div class="info">
+                <input
+                  type="text"
+                  placeholder="Your Mobile Number "
+                  class="input_info"
+                />
+                <input
+                  type="text"
+                  placeholder="Your E-mail"
+                  class="input_info"
+                />
+                <input
+                  type="text"
+                  placeholder="Your Website"
+                  class="input_info"
+                />
+                <input
+                  type="text"
+                  placeholder="Your linkedin Profile"
+                  class="input_info"
+                />
+                <input
+                  type="text"
+                  placeholder="Your github"
+                  class="input_info"
+                />
+                <input
+                  type="text"
+                  placeholder="Your address"
+                  class="input_info"
+                />
+              </div>
+            </legend>
+          </fieldset>
 
-          <div class="skill-box">
-            <h4>Skill Name</h4>
-            <div class="skill-percent">
-              <div class="my-expertise" style="width: 70%"></div>
-            </div>
+          <fieldset>
+            <legend>
+              Education History
+              <div class="education-info">
+                <div id="education-container"></div>
+                <button id="edu" type="button" onclick="addEducation()">
+                  Add Education
+                </button>
+              </div>
+            </legend>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              Skills
+              <div class="skills-set">
+                <div id="skill-container"></div>
+                <button type="button" onclick="addSkill()">Add Skill</button>
+              </div>
+            </legend>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              Intrest & Hobbies
+              <div id="intrest" class="intrests"></div>
+              <button type="button" onclick="addhobby()">Add Hobby</button>
+            </legend>
+          </fieldset>
+          
+          <div class="btns-div">
+            <button class="btns" type="submit">Submit</button>
+            <button class="btns" type="reset">Clear</button>
           </div>
-          <div class="skill-box">
-            <h4>Skill Name</h4>
-            <div class="skill-percent">
-              <div class="my-expertise" style="width: 80%"></div>
-            </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="Container">
+      <div class="ResumePage hidden ">
+        <div class="Left">
+          <button id="Download-btn">Generate Resume</button>
+          <button id="edit" onclick="edit()">Edit</button>
+          <div class="Profile">
+            <img src="" alt="Image" id="Image" />
+            <h2 class="name" id="MyName">Name</h2>
+            <span id="Title">Job Profession</span>
           </div>
-          <div class="skill-box">
-            <h4>Skill Name</h4>
-            <div class="skill-percent">
-              <div class="my-expertise" style="width: 90%"></div>
-            </div>
+
+          <div class="Contact-info">
+            <h3 class="Title">Contact Info</h3>
+            <ul>
+              <li>
+                <span class="Icon">logo</span>
+                <span class="Text">+92 123-456-789</span>
+              </li>
+              <li>
+                <span class="Icon">logo</span>
+                <span class="Text">Email</span>
+              </li>
+              <li>
+                <span class="Icon">logo</span>
+                <span class="Text">Website</span>
+              </li>
+              <li>
+                <span class="Icon">logo</span>
+                <span class="Text">Linkedin</span>
+              </li>
+              <li>
+                <span class="Icon">logo</span>
+                <span class="Text">github</span>
+              </li>
+              <li>
+                <span class="Icon">logo</span>
+                <span class="Text">Address</span>
+              </li>
+            </ul>
           </div>
-          <div class="skill-box">
-            <h4>Skill Name</h4>
-            <div class="skill-percent">
-              <div class="my-expertise" style="width: 60%"></div>
-            </div>
+
+          <div class="Education">
+            <div class="Title">Education</div>
+            <ul id="resume-education-container"></ul>
           </div>
-          <div class="skill-box">
-            <h4>Skill Name</h4>
-            <div class="skill-percent">
-              <div class="my-expertise" style="width: 70%"></div>
-            </div>
+
+          <div class="Languages">
+            <div class="Title">Languages</div>
+            <ul>
+              <li>
+                <span class="Text">English</span>
+                <span class="Percent">
+                  <div id="Language-1-bar" style="width: 60%"></div>
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div class="profile-intrest profile2">
-          <div class="title2">My Intrest</div>
-          <ul>
-            <li>my intrest</li>
-            <li>my intrest</li>
-            <li>my intrest</li>
-            <li>my intrest</li>
-            <li>my intrest</li>
-            <li>my intrest</li>
-          </ul>
+        <div class="Right">
+          <div class="Profile">
+            <div class="Title">Profile</div>
+            <p class="Para">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+              omnis temporibus exercitationem vero ducimus totam autem excepturi
+              iure voluptates aut quod reprehenderit, provident iusto, odio,
+              tenetur quae quisquam ullam dolore optio aliquam maxime soluta!
+              Eaque laudantium mollitia corporis nihil sunt.
+            </p>
+          </div>
+
+          <div class="Profile">
+            <div class="Title">Experience</div>
+            <div id="resume-job-container"></div>
+          </div>
+
+          <div class="Profile-skills Profile">
+            <div class="Title">Professional Skills</div>
+            <div id="resume-skill-container"></div>
+          </div>
+
+          <div class="Profile-intrest Profile">
+            <div class="Title">My Intrest</div>
+            <div id="resume-hobby-container"></div>
+          </div>
         </div>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
