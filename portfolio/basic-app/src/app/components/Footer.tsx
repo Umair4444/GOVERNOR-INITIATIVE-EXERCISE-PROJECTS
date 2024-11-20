@@ -9,7 +9,7 @@ import instagram from "@/app/images/instagram.png";
 
 const Footer = () => {
   return (
-    <div className="max-w-full min-h-96 bg-slate-500 flex flex-row items-start justify-between mt-6 p-20 pr-52  ">
+    <div className="max-w-full mt-10  bg-slate-500 flex flex-row items-start justify-between  p-20 pr-52  ">
       <div className="flex flex-col gap-2 items-stretch max-lg:hidden">
         <h1 className="text-2xl font-semibold mb-5 ">My Projects</h1>
         <div>
