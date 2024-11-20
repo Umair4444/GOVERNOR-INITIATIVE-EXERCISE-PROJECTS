@@ -370,7 +370,7 @@ let found: boolean = false;
 
 // // // print all value to check found and not found
 // for (let i=0;i<mountain_array.length;i++){
-//   // console.log(mountain_array[i] == "FUJI"); // WILL WORK SAME AS IF ELSE STATEMENT
+//   // console.log(mountain_array[i] == "FUJI"); // WILL WORK SAME AS IF ELSE STATEMENT RETURN TRUE OR FALSE
 // if(mountain_array[i] === "FUJI") {
 //   console.log("FOUND IT");
 // }else{console.log("NOT FOUND");}
