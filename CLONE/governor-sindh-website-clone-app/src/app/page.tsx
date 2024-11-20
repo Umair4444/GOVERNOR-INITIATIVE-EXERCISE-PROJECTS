@@ -5,7 +5,6 @@ import CardSlots from "./components/CardSlots";
 import SliderSlots from "./components/SliderSlots";
 import CoreCourse from "./components/CoreCourse";
 import AdvancedCourse from "./components/AdvanceCourse";
-import Dropdown from "./components/dropmenu";
 
 export default function Home() {
   return (
