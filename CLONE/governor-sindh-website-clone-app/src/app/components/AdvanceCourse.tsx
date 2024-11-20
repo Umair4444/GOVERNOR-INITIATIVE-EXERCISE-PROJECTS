@@ -3,12 +3,13 @@ import Image from "next/image";
 
 const AdvancedCourse = () => {
     return (
-        <div className="flex flex-col ml-28 my-12 ">
-            <h1 className="text-4xl font-extrabold text-sky-900 my-8  ">Advanced Courses</h1>
-            <div className="flex flex-wrap items-center gap-10 w-full tablet:flex-row phone:flex-col">
+        <div className="flex flex-col ml-28 my-12 phone:m-2 phone:w-full items-center justify-center text-center ">
+            
+            <h1 className="text-4xl font-extrabold text-sky-900 my-8 phone: phone:text-center smart:text-3xl">Advanced Courses</h1>
 
-                <div className=" flex flex-col items-center shadow-2xl rounded-lg w-[20%] tablet:w-[40%]  phone:w-[80%]  ">
-                    <Image src={"/15.jpg"} alt="core course" width={300} height={300} className="w-full " ></Image>
+            <div className="flex flex-wrap items-center gap-10 w-full tablet:flex-row phone:flex-col phone:w-2/3">
+                <div className=" flex flex-col items-center justify-center shadow-2xl rounded-lg w-[20%] tablet:w-[40%]  phone:w-[80%]  ">
+                    <Image src={"/15.jpg"} alt="core course" width={300} height={300} className="w-full  m-auto" ></Image>
                     <h2 className="text-center text-lg font-bold text-gray-600 p-5">Artificial Intelligence</h2>
                 </div>
                 <div className="shadow-2xl rounded-lg w-[20%] tablet:w-[40%] phone:w-[80%] ">
