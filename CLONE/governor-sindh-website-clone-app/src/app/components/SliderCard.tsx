@@ -10,7 +10,7 @@ const Slider = ({ img_url, alt_title }: CardProps) => {
   return (
     <>
       {/* remove your desire height dynamically */}
-      <div className="flex min-h-[calc(100vh-6rem)]  w-1/2">
+      <div className="flex min-h-[calc(100vh-6rem)]  w-1/2 smart:w-full">
         <Image
           src={img_url}
           alt={alt_title}

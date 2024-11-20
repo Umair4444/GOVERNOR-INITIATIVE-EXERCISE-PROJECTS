@@ -5,7 +5,7 @@ import "../globals.css";
 const HeroSection = () => {
   return (
     <div className="flex flex-row w-full h-screen bgimg">
-      <div className="w-5/12 h-screen flex flex-col mt-20 gap-1 ml-20 ">
+      <div className="w-5/12 h-screen flex flex-col mt-20 gap-1 ml-20 smart:w-full ">
         <h1 className="text-blue-700 text-6xl font-black">Governor Sindh</h1>
         <h3 className="text-blue-700 text-4xl font-light mb-5">
           Kamran Khan Tessori
@@ -26,13 +26,13 @@ const HeroSection = () => {
           >
             Apply Now
           </button>
-          <div className="flex flex-col items-center justify-around text-blue-800">
-            <h1 className="text-2xl font-bold">562,143</h1>
-            <p>Accepted Applications</p>
+          <div className="flex flex-col items-center justify-around text-blue-800 phone:w-full">
+            <h1 className="text-2xl font-bold text-center">562,143</h1>
+            <p className="text-center">Accepted Applications</p>
           </div>
         </div>
       </div>
-      <div className="w-7/12 h-screen ">
+      <div className="w-7/12 h-screen phone:hidden ">
         <Image
           src={"/kamran2.png"}
           width={400}

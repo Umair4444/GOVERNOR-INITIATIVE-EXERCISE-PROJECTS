@@ -12,6 +12,7 @@ export default function Home() {
     <>
       <HeroSection />
       <CardSlots />
+      <div className="w-full border-b-4 my-6 border-dashed"></div>
       <SliderSlots />
       <CoreCourse />
       <AdvancedCourse />

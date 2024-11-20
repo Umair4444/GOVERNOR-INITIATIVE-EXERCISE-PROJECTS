@@ -5,14 +5,15 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-    <div className="flex gap-10 items-start justify-around">
-      <div className="flex flex-col gap-3">
+    <div className="flex gap-10 items-start justify-around ">
+      <div className="flex flex-col gap-3 smart:hidden">
         <h1 className="text-2xl font-semibold">Core Courses</h1>
         <h3>Programming Fundamentals</h3>
         <h3>Web2 Using NextJS</h3>
         <h3>Earn as You Learn</h3>
       </div>
-      <div className="flex flex-col gap-3">
+
+      <div className="flex flex-col gap-3 smart:hidden">
         <h1 className="text-2xl font-semibold">Advanced Courses</h1>
         <h3>Web 3 and Metaverse</h3>
         <h3>Cloud-Native Computing</h3>
@@ -21,7 +22,8 @@ const Footer = () => {
         <h3>Genomics and Bioinformatics</h3>
         <h3>Network Programmability and Automation</h3>
       </div>
-      <div className="flex flex-col gap-3">
+
+      <div className="flex flex-col gap-3 smart:hidden">
         <h1 className="text-2xl font-semibold">Social Links</h1>
         <div className="flex items-center gap-1 w-full ">
           <Image src={"/facebook.png"} width={40} height={40} alt="facebook" className="w-1/5 "></Image>

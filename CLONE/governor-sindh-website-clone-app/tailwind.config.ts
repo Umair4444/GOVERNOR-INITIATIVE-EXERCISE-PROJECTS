@@ -16,16 +16,10 @@ const config: Config = {
       },
 
       screens: {
-        xsm: "300px",
-
-        tablet: "640px",
-        // => @media (min-width: 640px) { ... }
-
-        laptop: "1024px",
-        // => @media (min-width: 1024px) { ... }
-
-        desktop: "1280px",
-        // => @media (min-width: 1280px) { ... }
+        smart: { min: "300px", max: "1020px" },
+        phone: { min: "300px", max: "640px" },
+        tablet: { min: "641px", max: "1020px" },
+        laptop: { min: "1021" },
       },
     },
     plugins: [],
