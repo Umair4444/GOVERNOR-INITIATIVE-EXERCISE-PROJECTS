@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface CardProps {
   title: string;
@@ -9,7 +10,9 @@ interface CardProps {
 const Child = ({ title, desc, image }: CardProps) => {
   return (
     <div className="border rounded-lg shadow-lg p-4 w-auto">
-      <img
+      <Image
+        width={300}
+        height={300}
         src={image}
         alt={title}
         className="rounded-t-lg w-full h-40 object-cover"

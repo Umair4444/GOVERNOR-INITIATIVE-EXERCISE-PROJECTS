@@ -17,22 +17,22 @@ const Parent = () => {
     {
       title: "Lush Forest",
       description: "Explore the wonders of nature in a lush green forest.",
-      image: "forest.jpg",
+      image: "/forest.jpg",
     },
     {
       title: "Lush Forest",
       description: "Explore the wonders of nature in a lush green forest.",
-      image: "forest.jpg",
+      image: "/forest.jpg",
     },
     {
       title: "Lush Forest",
       description: "Explore the wonders of nature in a lush green forest.",
-      image: "forest.jpg",
+      image: "/forest.jpg",
     },
     {
       title: "Lush Forest",
       description: "Explore the wonders of nature in a lush green forest.",
-      image: "forest.jpg",
+      image: "/forest.jpg",
     },
   ];
   return (
