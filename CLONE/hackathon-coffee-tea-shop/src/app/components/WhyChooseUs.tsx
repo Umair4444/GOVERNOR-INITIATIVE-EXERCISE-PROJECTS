@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import burgerlogo from "@/app/assets/Hamburger.png";
 import winelogo from "@/app/assets/Wine.png";
-import cookielogo from "@/app/assets/cookie.png";
+import cookielogo from "@/app/assets/Cookie.png";
 import Logo from "./LogoCard";
 import choose1 from "@/app/assets/choose1.png";
 import choose2 from "@/app/assets/fooditems4.png";
