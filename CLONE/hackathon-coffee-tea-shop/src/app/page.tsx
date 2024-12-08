@@ -8,11 +8,11 @@ import ClientReviews from "./components/ClientReviews";
 export default function Home() {
   return (
     <>
-      {/* <HeroSection /> */}
-      {/* <AboutUs/> */}
-      {/* <FoodGallery /> */}
-      {/* <WhyChooseUs/> */}
-      {/* <ClientReviews /> */}
+      <HeroSection />
+      <AboutUs/>
+      <FoodGallery />
+      <WhyChooseUs/>
+      <ClientReviews />
     </>
   );
 }
