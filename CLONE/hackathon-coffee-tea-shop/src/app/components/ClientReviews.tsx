@@ -7,7 +7,7 @@ import Group3 from "@/app/assets/Group (3).png";
 
 const ClientReviews = () => {
   return (
-    <div className="w-full py-10 flex gap-3 items-center justify-evenly">
+    <div className="w-full py-10 flex gap-3 items-center justify-evenly mt-20">
       <ReviewCard image={Group4} title="Professional Chefs" number="420" />
       <ReviewCard image={Group1} title="Items Of Food" number="320" />
       <ReviewCard image={Group2} title="Years Of Experienced" number="30+" />

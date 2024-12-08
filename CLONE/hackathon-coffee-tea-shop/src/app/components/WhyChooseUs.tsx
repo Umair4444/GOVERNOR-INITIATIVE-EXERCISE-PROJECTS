@@ -13,9 +13,10 @@ import choose6 from "@/app/assets/choose5.png";
 import { Great_Vibes } from "next/font/google";
 
 const great_Vibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
+
 const WhyChooseUs = () => {
   return (
-    <div className="w-screen grid grid-cols-2 items-start">
+    <div className="w-screen grid grid-cols-2 items-start mt-20">
       <div className="w-fit gap-4 grid grid-rows-2 p-2 ">
         <div className=" w-full grid grid-cols-2">
           <Image src={choose1} alt="food" />
