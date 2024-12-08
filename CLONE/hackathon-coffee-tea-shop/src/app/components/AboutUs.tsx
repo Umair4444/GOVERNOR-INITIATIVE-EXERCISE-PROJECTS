@@ -11,7 +11,7 @@ const great_Vibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
 
 const AboutUs = () => {
   return (
-    <div className=" w-screen grid grid-cols-2 grid-rows-1 justify-items-center mt-20">
+    <div className=" w-full grid grid-cols-2 grid-rows-1 justify-items-center mt-20">
       <div className="w-10/12 grid gap-7 border-blue-300">
         <h3 className={`${great_Vibes.className} text-4xl text-[#FF9F0D] `}>
           about us

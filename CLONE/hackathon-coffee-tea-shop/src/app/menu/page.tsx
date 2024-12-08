@@ -6,14 +6,18 @@ import Menucard4 from "@/app/assets/menu4.png";
 
 const MenuPage = () => {
   return (
-    <div>
-      <div>
-        <TopCard />
+    <>
+      <div className="flex flex-col gap-20">
+        <div>
+          <TopCard />
+        </div>
+        <div className="flex flex-col ">
+          <MenuCard image={Menucard3} />
+          <MenuCard image={Menucard4} flexDirection="flex-row-reverse" />
+
+        </div>
       </div>
-      <div>
-        <MenuCard image={Menucard3} />
-      </div>
-    </div>
+    </>
   );
 };
 

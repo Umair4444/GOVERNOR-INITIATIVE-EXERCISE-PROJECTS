@@ -16,7 +16,7 @@ const great_Vibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
 
 const WhyChooseUs = () => {
   return (
-    <div className="w-screen grid grid-cols-2 items-start mt-20">
+    <div className="w-full grid grid-cols-2 items-start pl-14 mt-20">
       <div className="w-fit gap-4 grid grid-rows-2 p-2 ">
         <div className=" w-full grid grid-cols-2">
           <Image src={choose1} alt="food" />
@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
           <div className="w-full grid ">
             <Image src={choose4} alt="food" />
           </div>
-          <div className="w-full grid-rows-2 grid -ml-5 ">
+          <div className="w-full grid-rows-2 grid  ">
             <Image src={choose5} alt="food" />
             <Image src={choose6} alt="food" />
           </div>
