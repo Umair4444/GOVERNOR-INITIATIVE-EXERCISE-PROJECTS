@@ -11,7 +11,7 @@ const MenuPage = () => {
     <>
       <div className="flex flex-col gap-20 bg-white text-black ">
         <div>
-          <TopCard />
+          <TopCard title="Menu" />
         </div>
         <div className="flex flex-col ">
           <MenuCard image={Menucard3} />
