@@ -9,11 +9,13 @@ import Twitter from "@/app/assets/logo/TwitterLogo.png";
 import Instagram from "@/app/assets/logo/InstagramLogo.png";
 import Youtube from "@/app/assets/logo/YoutubeLogo.png";
 import Pintrest from "@/app/assets/logo/PinterestLogo.png";
+import Supportbar from "./Supportbar";
 
 const Footer = () => {
   return (
     <div className="w-full min-h-full mt-20">
       <div className="flex flex-col gap-8 ">
+        <Supportbar/>
         <div className="flex items-start justify-evenly ">
           <div className=" flex flex-col gap-8 ">
             <h5 className="font-bold text-2xl">About Us.</h5>

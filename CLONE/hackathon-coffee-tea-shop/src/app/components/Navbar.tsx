@@ -12,14 +12,13 @@ const Navbar = () => {
         <h1 className="">tuck</h1>
       </div>
 
-      <div className="border-2 flex flex-row justify-around items-center">
+      <div className=" flex flex-row justify-around items-center">
         <div className="flex ">
           <ul className="flex gap-5 text-lg font-normal ">
             <li>
               <Link href={"/"}>Home</Link>
             </li>
             <li>
-              {" "}
               <Link href={"/menu"}>Menu</Link>
             </li>
             <li>Blog</li>
@@ -39,17 +38,17 @@ const Navbar = () => {
             <li>Contact</li>
           </ul>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-3 items-center">
           <div className="w-fit flex gap-1 items-center border-[2px] border-[#FF9F0D] py-3 px-6 rounded-full">
             <input
               type="text"
               placeholder="Search"
-              className="outline-none rounded-full  bg-transparent text-white text-lg font-normal"
+              className="outline-none rounded-full  bg-transparent text-white text-lg font-normal placeholder:text-white "
             />
             <Image
               src={saearch}
               alt="search"
-              className="invert cursor-pointer "
+              className=" invert cursor-pointer  "
             />
           </div>
           <div>
