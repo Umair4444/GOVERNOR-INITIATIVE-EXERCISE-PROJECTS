@@ -21,7 +21,9 @@ const Navbar = () => {
             <li>
               <Link href={"/menu"}>Menu</Link>
             </li>
-            <li>Blog</li>
+            <li>
+              <Link href={"/blog"}>Blog</Link>
+            </li>
             <li>Pages</li>
             <li className="flex gap-1 items-center">
               About
