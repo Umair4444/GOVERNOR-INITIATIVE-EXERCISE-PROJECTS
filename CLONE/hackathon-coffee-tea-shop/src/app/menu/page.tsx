@@ -3,6 +3,7 @@ import TopCard from "../components/TopCard";
 import MenuCard from "../components/MenuCard";
 import Menucard3 from "@/app/assets/menu3.png";
 import Menucard4 from "@/app/assets/menu4.png";
+import ClientReviews from "../components/ClientReviews";
 
 const MenuPage = () => {
   return (
@@ -14,6 +15,11 @@ const MenuPage = () => {
         <div className="flex flex-col ">
           <MenuCard image={Menucard3} />
           <MenuCard image={Menucard4} flexDirection="flex-row-reverse" />
+          <ClientReviews/>
+          <MenuCard image={Menucard3} />
+          <MenuCard image={Menucard4} flexDirection="flex-row-reverse" />
+          
+
 
         </div>
       </div>
