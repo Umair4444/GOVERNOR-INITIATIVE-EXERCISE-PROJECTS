@@ -4,7 +4,7 @@ import LoginCard from "../components/LoginCard";
 const page = () => {
   return (
     <div>
-      <LoginCard />
+      <LoginCard />{" "}
     </div>
   );
 };
