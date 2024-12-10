@@ -1,7 +1,7 @@
 import React from "react";
 import Topcard from "@/app/assets/TopCard.png";
 
-const TopCard = (props) => {
+const TopCard = (props:any) => {
   return (
     <div
       className="h-[410px] bg-center bg-cover"

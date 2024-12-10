@@ -1,6 +1,6 @@
 import React from "react";
 
-const shopDetails = (params) => {
+const shopDetails = (params:any) => {
   console.log(params.params.shopdetails[1]);
   return (
     <div>
