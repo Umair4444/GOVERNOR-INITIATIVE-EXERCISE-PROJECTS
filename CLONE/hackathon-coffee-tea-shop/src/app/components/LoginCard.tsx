@@ -10,8 +10,7 @@ import TopCard from "./TopCard";
 
 const LoginCard = () => {
   return (
-    <div className="flex flex-col ">
-      <TopCard title="Login Page not 404 error " />
+   
       <div className="bg-[#EDEAE3] text-black  flex justify-center py-20">
         <div className="shadow-md shadow-slate-500 bg-white w-4/6">
           <form action="" className="flex flex-col my-10">
@@ -85,7 +84,6 @@ const LoginCard = () => {
           </form>
         </div>
       </div>
-    </div>
   );
 };
 
