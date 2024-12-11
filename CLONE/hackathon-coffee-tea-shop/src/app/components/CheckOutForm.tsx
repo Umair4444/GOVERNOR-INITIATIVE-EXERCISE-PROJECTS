@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const CheckOutForm = () => {
   return (
-    <div className="bg-white text-black py-20">
+    <div className="bg-white text-black my-20 mx-2">
       <div className="">
         <h1 className="font-bold text-xl mb-5">Shipping Address</h1>
 
