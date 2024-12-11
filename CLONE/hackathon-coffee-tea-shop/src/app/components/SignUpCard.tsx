@@ -12,7 +12,7 @@ import TopCard from "./TopCard";
 const SignUpCard = () => {
   return (
     <div className="bg-[#EDEAE3] text-black  flex justify-center py-20">
-      <div className="shadow-md shadow-slate-500 bg-white w-4/6">
+      <div className="shadow-md shadow-slate-500 bg-white sm:w-4/6  md:w-3/5 lg:w-2/4">
         <form action="" className="flex flex-col my-10">
           <fieldset className="flex flex-col justify-start gap-4 p-7">
             <legend className="text-start font-bold text-xl">
@@ -26,29 +26,29 @@ const SignUpCard = () => {
                 name="name"
                 id="name"
                 placeholder="Name"
-                className="border-none outline-none text-[16px] font-normal text-slate-950"
+                className="border-none outline-none text-[16px] font-normal w-full"
               />
             </legend>
 
             <legend className="flex items-center  border-2 gap-2 py-2 px-3">
               <Image src={mail} alt="mail" />
               <input
-                type="text"
+                type="email"
                 name="mail"
                 id="mail"
                 placeholder="Email"
-                className="border-none outline-none text-[16px] font-normal text-slate-950"
+                className="border-none outline-none text-[16px] font-normal w-full"
               />
             </legend>
 
             <legend className="flex items-center border-2 gap-2 py-2 px-3">
               <Image src={lock} alt="lock" />
               <input
-                type="text"
+                type="password"
                 name="lock"
                 id="lock"
                 placeholder="Password"
-                className="border-none outline-none text-[16px] font-normal"
+                className="border-none outline-none text-[16px] font-normal w-full"
               />
             </legend>
 
@@ -73,7 +73,7 @@ const SignUpCard = () => {
               />
             </div>
             <div className="flex justify-end">
-              <Link href={""}>Forget Password?</Link>
+              <Link href={"/signup"}>Forget Password?</Link>
             </div>
 
             <div className="flex w-full items-center ">
@@ -82,12 +82,12 @@ const SignUpCard = () => {
               <div className=" border-[1px] w-full h-0"></div>
             </div>
 
-            <legend className="flex items-center justify-start border-2 gap-24 py-2 px-3">
+            <legend className="flex items-center justify-center border-2 gap-5 py-2 px-3">
               <Image src={google} alt="google" />
               <button className="text-justify">Sign Up with Google</button>
             </legend>
 
-            <legend className="flex items-center justify-start border-2 gap-24 py-2 px-3">
+            <legend className="flex items-center justify-center border-2 gap-5 py-2 px-3">
               <Image src={apple} alt="apple" />
               <button className="text-justify">Sign Up with Apple</button>
             </legend>

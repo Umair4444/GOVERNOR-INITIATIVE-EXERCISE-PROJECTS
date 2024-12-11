@@ -7,7 +7,7 @@ import TopCard from '../components/TopCard'
 const page = () => {
   return (
     <div>
-         <TopCard title="Login Page not 404 error " />
+         <TopCard title=" SignUp Page" />
         <SignUpCard/>
     </div>
   )

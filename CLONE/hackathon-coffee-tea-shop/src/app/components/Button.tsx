@@ -1,5 +1,3 @@
-import React from "react";
-
 const Button = (props: any) => {
   return (
     <div>
@@ -9,7 +7,8 @@ const Button = (props: any) => {
             props.textColor || "white"
           }    w-${props.width} text-[16px] rounded-${props.rounded}  px-${
             props.xpadding
-          } py-${props.ypadding} border-${props.border || "0"}  `}
+          } py-${props.ypadding} border-${props.border || "0"} `}
+          type="button" onClick={props.onclick}
         >
           {props.title}
         </button>

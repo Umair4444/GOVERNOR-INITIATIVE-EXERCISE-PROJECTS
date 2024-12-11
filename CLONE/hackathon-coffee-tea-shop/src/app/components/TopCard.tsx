@@ -1,13 +1,13 @@
 import React from "react";
 import Topcard from "@/app/assets/TopCard.png";
 
-const TopCard = (props:any) => {
+const TopCard = (props: any) => {
   return (
     <div
-      className="h-[410px] bg-center bg-cover"
+      className="bg-center bg-cover h-[15rem] w-full"
       style={{ backgroundImage: `url(${Topcard.src})` }}
     >
-      <div className="flex flex-col justify-center pt-24 gap-10">
+      <div className="h-full flex flex-col justify-center items-center text-center gap-4">
         <h1 className="text-white text-4xl font-bold text-center">
           Our {props.title}
         </h1>

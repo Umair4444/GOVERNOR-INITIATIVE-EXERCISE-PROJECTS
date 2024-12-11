@@ -16,6 +16,9 @@ const config: Config = {
       fontFamily: {
         helvetica: ["Helvetica", "Arial", "sans-serif"], // Use Helvetica with fallbacks
       },
+      screens : {
+        sm : "480px"
+      }
     },
   },
   plugins: [],

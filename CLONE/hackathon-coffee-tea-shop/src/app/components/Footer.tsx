@@ -15,8 +15,8 @@ const Footer = () => {
   return (
     <div className="w-full min-h-full mt-20">
       <div className="flex flex-col gap-8 ">
-        <Supportbar/>
-        <div className="flex items-start justify-evenly ">
+        <Supportbar />
+        <div className="sm:hidden md:flex items-start justify-evenly ">
           <div className=" flex flex-col gap-8 ">
             <h5 className="font-bold text-2xl">About Us.</h5>
             <p className="w-[312px] h-[95px] text-[16px]">
@@ -90,9 +90,11 @@ const Footer = () => {
         </div>
         <div className="w-full h-[99px] bg-[#4F4F4F] flex items-center justify-between px-10">
           <div className="">
-            <p>Copyright © 2022 by Umair GIAIC. All Rights Reserved.</p>
+            <p className="sm:text-[12px] md:text-[14px] lg:text-lg">
+              Copyright © 2022 by Umair GIAIC. All Rights Reserved.
+            </p>
           </div>
-          <div className="flex gap-5 items-center cursor-pointer">
+          <div className="flex gap-1 md:gap-5 items-center cursor-pointer w-fit">
             <div className="bg-white p-2 ">
               <Image
                 src={Facebook}
