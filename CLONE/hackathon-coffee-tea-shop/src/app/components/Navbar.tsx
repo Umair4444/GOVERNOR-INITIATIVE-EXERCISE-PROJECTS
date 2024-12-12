@@ -50,15 +50,17 @@ const Navbar = () => {
             </li>
             <li>Pages</li>
             <li className="flex gap-1 items-center">
-              About
-              <span>
-                <Image
-                  src={caretdown}
-                  alt="listmenu"
-                  width={15}
-                  className=" invert cursor-pointer"
-                />
-              </span>
+              <Link href={"/about-us"} className="flex gap-1 items-center">
+                About
+                <span>
+                  <Image
+                    src={caretdown}
+                    alt="listmenu"
+                    width={15}
+                    className=" invert cursor-pointer"
+                  />
+                </span>
+              </Link>
             </li>
             <li>
               <Link href={"/shop"}>Shop</Link>

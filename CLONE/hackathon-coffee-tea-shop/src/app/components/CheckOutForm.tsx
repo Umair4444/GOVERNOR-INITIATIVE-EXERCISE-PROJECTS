@@ -7,7 +7,10 @@ const CheckOutForm = () => {
       <div className="">
         <h1 className="font-bold text-xl mb-5">Shipping Address</h1>
 
-        <form action="" className="grid grid-flow-row grid-cols-1 lg:grid-cols-2  gap-5">
+        <form
+          action=""
+          className="grid grid-flow-row grid-cols-1 lg:grid-cols-2  gap-5"
+        >
           <fieldset className="text-[16px] font-normal">
             <legend className="mb-1">First Name</legend>
             <input
@@ -138,18 +141,20 @@ const CheckOutForm = () => {
           </fieldset>
           <Button
             title="< Back to Cart"
-            xpadding="10"
-            ypadding="2"
-            width="full"
+            xpadding="px-10"
+            ypadding="py-2"
+            width="w-full"
             bgColor="bg-white"
-            textColor="black"
-            border="2"
+            textColor="text-black"
+            border="border-2"
+            rounded="rounded-none"
           />
           <Button
             title="Proceed to shipping >"
-            xpadding="10"
-            ypadding="2"
-            width="full"
+            xpadding="px-10"
+            ypadding="py-2"
+            width="w-full"
+            rounded="rounded-none"
           />
         </form>
       </div>

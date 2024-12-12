@@ -1,7 +1,7 @@
 import TopCard from '@/app/components/TopCard'
 import React from 'react'
 
-const shoppage = () => {
+const shopPage = () => {
   return (
     <div>
         <TopCard title="Shop"/>
@@ -9,4 +9,4 @@ const shoppage = () => {
   )
 }
 
-export default shoppage
+export default shopPage

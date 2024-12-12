@@ -20,7 +20,7 @@ const HeroSection = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius
               sed pharetra dictum neque massa congue
             </p>
-            <Button title="See Menu" width="fit" rounded="full"  xpadding="10" ypadding="4"  />
+            <Button title="See Menu" width="w-fit" rounded="rounded-full"    />
           </div>
           <div className="w-7/12 ">
             <Image src={heroImage} alt="heroImage" />

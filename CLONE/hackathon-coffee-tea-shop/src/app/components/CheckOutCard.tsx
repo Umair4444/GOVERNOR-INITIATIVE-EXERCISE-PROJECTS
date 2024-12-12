@@ -28,11 +28,16 @@ const CheckOutCard = () => {
           <h2>Free</h2>
         </div>
         <div className="flex justify-between text-lg pb-3 border-b-2">
-          <h2 >Total</h2>
+          <h2>Total</h2>
           <h2 className="font-bold">$54.76</h2>
         </div>
-        <Button title="Place an order ->" width="full"
-        xpadding="10" ypadding="2" rounded="md" />
+        <Button
+          title="Place an order ->"
+          width="w-full"
+          xpadding="px-10"
+          ypadding="py-2"
+          rounded="rounded-md"
+        />
       </div>
     </div>
   );

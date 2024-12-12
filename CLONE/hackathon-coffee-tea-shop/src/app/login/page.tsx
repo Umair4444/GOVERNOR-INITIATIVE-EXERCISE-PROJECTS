@@ -3,7 +3,7 @@ import React from "react";
 import LoginCard from "../components/LoginCard";
 import TopCard from "../components/TopCard";
 
-const page = () => {
+const loginPage = () => {
   return (
     <div>
       <TopCard title="Login Page" />
@@ -12,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default loginPage;

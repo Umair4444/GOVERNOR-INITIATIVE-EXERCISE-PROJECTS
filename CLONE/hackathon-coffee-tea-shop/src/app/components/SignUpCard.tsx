@@ -7,7 +7,6 @@ import lock from "@/app/assets/logo/Lock.png";
 import apple from "@/app/assets/apple.png";
 import google from "@/app/assets/Google.png";
 import Button from "./Button";
-import TopCard from "./TopCard";
 
 const SignUpCard = () => {
   return (
@@ -67,9 +66,9 @@ const SignUpCard = () => {
               <Button
                 title="Sign Up"
                 className="rounded-none"
-                width="full"
-                rounded="sm"
-                ypadding="2"
+                width="w-full"
+                rounded="runded-sm"
+                ypadding="py-2"
               />
             </div>
             <div className="flex justify-end">

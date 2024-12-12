@@ -54,9 +54,9 @@ const LoginCard = () => {
               <Button
                 title="Sign Up"
                 className="rounded-none"
-                width="full"
-                rounded="sm"
-                ypadding="2"
+                width="w-full"
+                rounded="rounded-sm"
+                ypadding="py-2"
               />
             </div>
             <div className="flex justify-end">

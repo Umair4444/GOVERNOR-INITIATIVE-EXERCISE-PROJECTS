@@ -2,7 +2,7 @@ import React from "react";
 import TopCard from "../components/TopCard";
 import Faqs from "../components/Faq";
 
-const faq = () => {
+const faqPage = () => {
   return (
     <div>
         <TopCard title="FAQ Pages" />
@@ -11,4 +11,4 @@ const faq = () => {
   );
 };
 
-export default faq;
+export default faqPage;

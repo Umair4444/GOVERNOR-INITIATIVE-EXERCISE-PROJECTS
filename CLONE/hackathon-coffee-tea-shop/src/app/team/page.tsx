@@ -1,7 +1,7 @@
 import React from "react";
 import Chefgallery from "../components/Chefgallery";
 
-const page = () => {
+const teamPage = () => {
   return (
     <div>
       <Chefgallery />
@@ -9,4 +9,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default teamPage;

@@ -31,7 +31,7 @@ const AboutUs = () => {
           <Image src={checkbox} alt="checkbox" className="invert" />
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
-        <Button title="Read More" width="fit" rounded="full" xpadding="10" ypadding="4"  />
+        <Button title="Read More" />
       </div>
       <div className="w-8/12 grid gap-2">
         <div className="w-full h-1/2">
