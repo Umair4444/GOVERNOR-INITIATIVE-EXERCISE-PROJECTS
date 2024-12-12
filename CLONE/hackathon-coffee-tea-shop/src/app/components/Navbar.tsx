@@ -8,7 +8,6 @@ import close from "@/app/assets/logo/X.png";
 import login from "@/app/assets/logo/User.png";
 import Link from "next/link";
 import { useState } from "react";
-import Button from "./Button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -81,11 +80,13 @@ const Navbar = () => {
             />
           </div>
           <div>
-            <Image
-              src={handbag}
-              alt="handbag"
-              className="invert cursor-pointer "
-            />
+            <Link href={"/checkout"}>
+              <Image
+                src={handbag}
+                alt="handbag"
+                className="invert cursor-pointer "
+              />
+            </Link>
           </div>
           <div>
             <Link href={"/login"}>

@@ -6,7 +6,7 @@ import cartimage3 from "@/app/assets/psot3.png";
 
 const CheckOutCardImage = () => {
   return (
-    <div className="flex flex-col justify-center gap-2 ">
+    <div className="flex flex-col justify-center gap-2">
       <div className="bg-white text-black flex gap-2 m-2">
         <div className="flex items-center">
           <Image src={cartimage1} alt="cartItem" className="h-full" />

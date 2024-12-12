@@ -2,7 +2,7 @@ import React from "react";
 
 const Supportbar = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mx-2">
       <div className="flex items-center justify-around sm:px-14 md:p-0">
         <div className="flex flex-col lg:gap-3 sm:gap-2 items-start px-4">
           <h2 className="font-bold lg:text-3xl md:text-2xl sm:text-lg">
@@ -12,14 +12,14 @@ const Supportbar = () => {
             Don’t wait make a smart & logical quote here. Its pretty easy.
           </p>
         </div>
-        <div className="md:-space-x-2 sm:flex md:block flex-col items-center justify-center gap-1 ">
+        <div className="md:-space-x-2 sm:flex lg:block flex-col items-center justify-center gap-1 ">
           <input
             type="text"
             placeholder="Enter Your Email"
-            className="bg-[#FF9F0D] text-white placeholder:text-white px-8 py-3 border-0 rounded-[4px]"
+            className="bg-[#FF9F0D] sm:w-[20rem] md:w-[30rem] lg:w-[20rem] text-white placeholder:text-white px-8 py-3 border-0 rounded-[4px]"
           />
           <span>
-            <button className="bg-white text-yellow-500 font-semibold px-8 py-3 rounded-[4px] ">
+            <button className="bg-white sm:w-[10rem] md:w-[20rem] lg:w-auto text-yellow-500 font-semibold px-8 py-3 rounded-[4px] ">
               Subscribe
             </button>
           </span>

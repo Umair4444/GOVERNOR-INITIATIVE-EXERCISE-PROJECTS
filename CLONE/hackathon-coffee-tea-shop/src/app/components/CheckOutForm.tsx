@@ -3,11 +3,11 @@ import Button from "./Button";
 
 const CheckOutForm = () => {
   return (
-    <div className="bg-white text-black my-20 mx-2">
+    <div className="bg-white text-black my-20 mx-6">
       <div className="">
         <h1 className="font-bold text-xl mb-5">Shipping Address</h1>
 
-        <form action="" className="grid grid-cols-2 mx-4 gap-5">
+        <form action="" className="grid grid-flow-row grid-cols-1 lg:grid-cols-2  gap-5">
           <fieldset className="text-[16px] font-normal">
             <legend className="mb-1">First Name</legend>
             <input
@@ -123,7 +123,8 @@ const CheckOutForm = () => {
               className="border-2 py-2 px-4 w-full"
             />
           </fieldset>
-          <fieldset className="text-[20px] font-bold flex items-center col-span-2">
+
+          <fieldset className="text-[20px] font-bold flex items-center lg:col-span-2 ">
             <legend className="mb-1">Billing Address</legend>
             <input
               type="checkbox"
@@ -141,8 +142,8 @@ const CheckOutForm = () => {
             ypadding="2"
             width="full"
             bgColor="bg-white"
-            textColor = "black"
-            border = "2"
+            textColor="black"
+            border="2"
           />
           <Button
             title="Proceed to shipping >"

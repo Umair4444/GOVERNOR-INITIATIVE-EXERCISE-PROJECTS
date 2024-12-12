@@ -10,6 +10,7 @@ import Instagram from "@/app/assets/logo/InstagramLogo.png";
 import Youtube from "@/app/assets/logo/YoutubeLogo.png";
 import Pintrest from "@/app/assets/logo/PinterestLogo.png";
 import Supportbar from "./Supportbar";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -41,7 +42,9 @@ const Footer = () => {
               <li>About</li>
               <li>News</li>
               <li>Partner</li>
-              <li>Team</li>
+              <li>
+                <Link href={"/team"}>Team</Link>
+              </li>
               <li>Menu</li>
               <li>Contacts</li>
             </ul>
@@ -49,7 +52,9 @@ const Footer = () => {
           <div className="flex flex-col gap-6">
             <h5 className="font-bold text-2xl">Help?</h5>
             <ul className="text-lg font-normal flex flex-col gap-6">
-              <li>FAQ</li>
+              <li>
+                <Link href={"/faq"}>FAQ</Link>
+              </li>
               <li>Terms & Conditions</li>
               <li>Reporting</li>
               <li>Documentation</li>
