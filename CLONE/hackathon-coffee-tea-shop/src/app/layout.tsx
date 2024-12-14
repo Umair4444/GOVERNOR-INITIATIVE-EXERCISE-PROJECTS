@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Roboto, Great_Vibes } from "next/font/google";
+import { Inter, Roboto, Great_Vibes  } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({ subsets: ["latin"], weight: ["500"] });
 const great_Vibes = Great_Vibes({ subsets: ["latin"], weight: ["400"] });
+
 
 export const metadata: Metadata = {
   title: "Food Tuck App",

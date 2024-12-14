@@ -1,3 +1,4 @@
+import { Great_Vibes } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -14,11 +15,13 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        helvetica: ["Helvetica", "Arial", "sans-serif"], // Use Helvetica with fallbacks
+        // helvetica: ["Helvetica", "Arial", "sans-serif"], // Use Helvetica with fallbacks
+        helvetica : ["Helvetica","Arial"],
+        Great_Vibes : ["Great_Vibes"]
       },
-      screens : {
-        sm : "480px"
-      }
+      screens: {
+        sm: "480px",
+      },
     },
   },
   plugins: [],

@@ -10,7 +10,7 @@ const great_Vibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
 
 const FoodGallery = () => {
     return (
-        <div className="flex flex-col items-center gap-6 text-center mt-20">
+        <div className="flex flex-col items-center gap-6 text-center mt-5 md:mt-10 lg:mt-20">
             <div>
                 <h3 className={`${great_Vibes.className} text-4xl text-[#FF9F0D] `}>
                     Food Gallery

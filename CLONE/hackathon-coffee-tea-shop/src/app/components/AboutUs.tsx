@@ -7,17 +7,21 @@ import aboutus3 from "@/app/assets/aboutus_3.png";
 import { Great_Vibes } from "next/font/google";
 import Button from "./Button";
 
-const great_Vibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
+const great_Vibes = Great_Vibes({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-great-vibes",
+});
 
 const AboutUs = () => {
   return (
-    <div className=" w-full grid grid-cols-2 grid-rows-1 justify-items-center mt-20">
-      <div className="w-10/12 grid gap-7 border-blue-300">
+    <div className=" w-full grid  grid-cols-1 lg:grid-cols-2 grid-rows-1 justify-items-center mt-5 md:mt-10 lg:mt-20 sm:gap-4 lg:gap-0">
+      <div className=" w-8/12 grid gap-7 border-blue-300">
         <h3 className={`${great_Vibes.className} text-4xl text-[#FF9F0D] `}>
           about us
         </h3>
         <h1 className="text-5xl font-bold">
-          <span className="text-[#FF9F0D] font-helvetica">We</span>
+          <span className="text-[#FF9F0D] font-helvetica">We </span>
           Create the best foody product
         </h1>
         <p className="text-lg">
@@ -33,11 +37,11 @@ const AboutUs = () => {
         </div>
         <Button title="Read More" />
       </div>
-      <div className="w-8/12 grid gap-2">
-        <div className="w-full h-1/2">
+      <div className=" grid w-9/12 md:10/12 lg:w-11/12 h-fit gap-4 row-start-1 lg:col-start-2 justify-center ">
+        <div className="w-fit lg:w-full h-1/2 items-end">
           <Image src={aboutus1} alt="about-us" />
         </div>
-        <div className="w-full h-full grid grid-cols-2 gap-2">
+        <div className="w-fit lg:w-full h-full grid grid-cols-2 gap-4 items-end">
           <div>
             <Image src={aboutus2} alt="aboutus" />
           </div>

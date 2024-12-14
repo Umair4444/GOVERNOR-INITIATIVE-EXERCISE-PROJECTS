@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import AboutUs from "./components/AboutUs";
 import FoodGallery from "./components/FoodGallery";
@@ -9,11 +8,10 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <AboutUs/>
+      <AboutUs />
       <FoodGallery />
-      <WhyChooseUs/>
-      <ClientReviews />
-      
+      {/* <WhyChooseUs/> */}
+      <ClientReviews /> 
     </>
   );
 }
