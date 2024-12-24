@@ -1,7 +1,7 @@
 import React from "react";
 import TopCard from "../components/TopCard";
-import AboutUs from "../components/AboutUs";
 import AboutUsHeroSection from "../components/AboutUsHeroSection";
+import WhyChooseUs2 from "../components/WhyChooseUs2";
 
 const aboutUs = () => {
   return (
@@ -10,8 +10,10 @@ const aboutUs = () => {
         <TopCard title="About Us" />
       </div>
       <div className="py-20">
-        {/* <AboutUs /> */}
         <AboutUsHeroSection />
+      </div>
+      <div>
+        <WhyChooseUs2 />
       </div>
     </div>
   );

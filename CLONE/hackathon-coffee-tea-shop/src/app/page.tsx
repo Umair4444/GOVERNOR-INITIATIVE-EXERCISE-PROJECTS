@@ -6,12 +6,15 @@ import ClientReviews from "./components/ClientReviews";
 
 export default function Home() {
   return (
-    <>
+    < >
+    <div className=" scroll-smooth">
+
       <HeroSection />
       <AboutUs />
       <FoodGallery />
       {/* <WhyChooseUs/> */}
       <ClientReviews /> 
+    </div>
     </>
   );
 }

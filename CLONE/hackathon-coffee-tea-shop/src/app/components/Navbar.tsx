@@ -39,8 +39,10 @@ const Navbar = () => {
           } flex-col justify-center lg:flex lg:flex-row items-center gap-5 mt-5 md:mt-0`}
         >
           <ul className="flex sm:flex-col lg:flex-row gap-5 text-lg font-normal  ">
-            <li>
-              <Link href={"/"}>Home</Link>
+            <li className="hover:text-yellow-600  active:text-yellow-500">
+              <Link href={"/"} className="">
+                Home
+              </Link>
             </li>
             <li>
               <Link href={"/menu"}>Menu</Link>
@@ -78,7 +80,7 @@ const Navbar = () => {
             <Image
               src={saearch}
               alt="search"
-              className=" invert cursor-pointer  "
+              className=" invert cursor-pointer"
             />
           </div>
           <div>

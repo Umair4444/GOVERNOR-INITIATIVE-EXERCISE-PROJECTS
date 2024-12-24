@@ -10,7 +10,7 @@ import Button from "./Button";
 const AboutUsHeroSection = () => {
   return (
     <div className="grid grid-flow-row lg:grid-flow-col lg:justify-items-end w-screen gap-10 sm:px-4 md:px-8 lg:px-16 lg:justify-around text-black">
-      <div className="grid grid-cols-2 gap-4 w-full  border-2  ">
+      <div className="grid grid-cols-2 gap-4 w-full  ">
         <div className="row-span-full h-64 sm:h-80 md:h-96 lg:h-[500px] md:w-auto self-start  ">
           <Image
             src={image1}
