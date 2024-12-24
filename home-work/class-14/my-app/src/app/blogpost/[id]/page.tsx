@@ -7,8 +7,8 @@ const blogpostId = async ({ params }: any) => {
 
   return (
     <div className="bg-slate-300 h-screen flex items-center justify-center flex-col">
-      <div className=" text-center text-5xl font-bold px-10 py-5">
-        blogpostId
+      <div className=" text-center text-5xl font-bold px-10 py-5 uppercase">
+        blogpost {params.id}
       </div>
 
       {
