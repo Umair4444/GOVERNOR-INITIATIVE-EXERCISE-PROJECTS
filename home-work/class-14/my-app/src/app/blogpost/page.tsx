@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const blogpost = async (props) => {
+const blogpost = async (props: any) => {
   const url = "https://jsonplaceholder.typicode.com/todos";
   const res = await (await fetch(url)).json();
   //   console.log(res);
