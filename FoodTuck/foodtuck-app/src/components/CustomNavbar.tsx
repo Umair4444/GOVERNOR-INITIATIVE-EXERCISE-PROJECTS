@@ -57,17 +57,6 @@ const Navbar = () => {
               <Link href={"/page"}>More Pages</Link>
             </li>
             <li className="flex gap-1 items-center">
-              {/* <Select>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Theme" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="light">Light</SelectItem>
-                  <SelectItem value="dark">Dark</SelectItem>
-                  <SelectItem value="system">System</SelectItem>
-                </SelectContent>
-              </Select> */}
-
               <Link href={"/about"} className="flex gap-1 items-center">
                 About
                 {/* use select from shadcn */}
