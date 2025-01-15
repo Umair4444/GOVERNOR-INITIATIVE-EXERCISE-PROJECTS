@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import partner1 from "@/app/assets/partner1.png";
 import partner2 from "@/app/assets/partner2.png";
@@ -6,6 +5,7 @@ import partner3 from "@/app/assets/partner3.png";
 import partner4 from "@/app/assets/partner4.png";
 import partner5 from "@/app/assets/partner5.png";
 import partner6 from "@/app/assets/partner6.png";
+import React from "react";
 
 const Partners = () => {
   return (

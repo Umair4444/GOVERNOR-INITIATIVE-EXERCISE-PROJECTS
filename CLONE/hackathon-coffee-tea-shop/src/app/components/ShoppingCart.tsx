@@ -1,12 +1,10 @@
 import Image from "next/image";
-import emptystar from "@/app/assets/emptystar.png";
-import fullstar from "@/app/assets/fullstar.png";
 import img1 from "@/app/assets/Mask Group.png";
 import img2 from "@/app/assets/Mask Group2.png";
 import img3 from "@/app/assets/Mask Group3.png";
+import Ratings from "./ratings";
 
 const ShoppingCart = (props: any) => {
-
   return (
     <div>
       <h1 className="text-2xl font-bold">Products</h1>
@@ -16,29 +14,10 @@ const ShoppingCart = (props: any) => {
       <h1 className="text-2xl font-bold">Remove</h1>
 
       <div className="bg-white text-black flex items-center justify-around">
-        <div className=" flex items-center">
-          <div className="flex items-center">
-            <Image src={img1} alt="cartItem" className="h-full" />
-          </div>
-
-          <div className="flex flex-col items-start gap-2">
-            <h1 className="font-bold">{props.item}</h1>
-            <div className="flex flex-col items-start">
-              <div className="flex gap-2">
-                {Array.from({ length: props.maxStars || 5 }).map((_, index) => (
-                  <Image
-                    key={index}
-                    src={index < props.rating || 0 ? fullstar : emptystar} // Choose filled or empty
-                    alt={index < props.rating ? "Filled Star" : "Empty Star"}
-                    width={20}
-                    height={20}
-                    className="inline-block"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center">
+          <Image src={img1} alt="cartItem" className="h-full" />
         </div>
+        <Ratings rating="4" />
 
         <div className="text-lg font-bold">
           <h1>{props.price}</h1>

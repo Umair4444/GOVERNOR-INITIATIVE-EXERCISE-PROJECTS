@@ -3,7 +3,7 @@ import bg from "@/assets/rest creative process.png";
 
 export default function BgImage() {
   return (
-    <div className="relative h-screen">
+    <div className="relative ">
       <Image
         src={bg}
         alt="Background"

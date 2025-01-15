@@ -9,12 +9,10 @@ const shoppingcart = () => {
         <TopCard title="Shopping Cart" />
       </div>
 
-       
-
-        <div>
-          <ShoppingCart item="Burge" rating="2" price="$20" quantity="2" />
-        </div>
+      <div>
+        <ShoppingCart item="Burge" rating="2" price="$20" quantity="2" />
       </div>
+    </div>
   );
 };
 

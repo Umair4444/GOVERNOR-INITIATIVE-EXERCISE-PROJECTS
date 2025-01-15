@@ -12,7 +12,7 @@ export default function Home() {
       <HeroSection />
       <AboutUs />
       <FoodGallery />
-      {/* <WhyChooseUs/> */}
+      <WhyChooseUs/>
       <ClientReviews /> 
     </div>
     </>

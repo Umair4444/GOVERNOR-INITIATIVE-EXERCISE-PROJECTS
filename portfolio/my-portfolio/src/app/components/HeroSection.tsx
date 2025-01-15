@@ -8,15 +8,18 @@ import BgImage from "./BgImage";
 
 const HeroSection = () => {
   return (
-    <div className="relative h-screen">
-      <Image
-        src={bg}
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        className="z-0 "
-        priority
-      />
+    <div className="relative">
+      {/* use pt to fit image */}
+      <div className="-z-10 pt-9">
+        <Image
+          src={bg}
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          // className="z-10"
+          priority
+        />
+      </div>
       <div className="relative z-20 border-2 flex justify-around items-center text-white ">
         <div className="border-2 rounded">
           <Image
