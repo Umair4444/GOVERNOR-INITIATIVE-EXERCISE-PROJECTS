@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import heroImage from "@/assets/dish/Image.png";
-import SideLogoBar from "./ui/side-logo-bar";
-import { Button } from "./ui/button";
-import MyButton from "./ui/myButton";
+import SideLogoBar from "../ui/side-logo-bar";
+import { Button } from "../ui/button";
+import MyButton from "../ui/myButton";
 import { client } from "@/sanity/lib/client";
 import { Divide } from "lucide-react";
 import { urlFor } from "@/sanity/lib/image";

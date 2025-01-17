@@ -24,27 +24,27 @@ const Navbar = () => {
           className={`flex-col justify-center hidden lg:flex items-center gap-5 mt-5 md:mt-0`}
         >
           <ul className="hidden md:flex items-center gap-5 px-5 lg:text-xl font-normal">
-            <li className="hover:text-yellow-600  active:text-yellow-500">
+            <li className="hover:text-yellow-600  ">
               <Link href={"/"} className="">
                 Home
               </Link>
             </li>
-            <li>
+            <li className="hover:text-yellow-600  ">
               <Link href={"/menu"}>Menu</Link>
             </li>
-            <li>
+            <li className="hover:text-yellow-600  ">
               <Link href={"/blog"}>Blog</Link>
             </li>
-            <li className="text-nowrap">
-              <Link href={"/page"}>More Pages</Link>
+            <li className="text-nowrap hover:text-yellow-600 ">
+              <Link href={"/all-items"}>All Itmes</Link>
             </li>
-            <li>
+            <li className="hover:text-yellow-600  ">
               <Link href={"/about"}>About</Link>
             </li>
-            <li>
+            <li className="hover:text-yellow-600  ">
               <Link href={"/shop"}>Shop</Link>
             </li>
-            <li>
+            <li className="hover:text-yellow-600  ">
               <Link href={"/contact-us"}>Contact</Link>
             </li>
           </ul>
