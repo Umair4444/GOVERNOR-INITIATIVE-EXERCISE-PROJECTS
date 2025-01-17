@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { IProduct } from "../utils/Types";
 // import { products } from "../utils/Mock";
 
-const page = () => {
+const Products = () => {
   // const randomid = Math.floor(Math.random() * 1000 + 1);
   const products = useSelector((state: any) => state.product);
 
@@ -60,4 +60,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Products;
