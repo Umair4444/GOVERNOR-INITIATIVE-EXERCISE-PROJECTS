@@ -16,11 +16,21 @@ import MyButton from "./ui/myButton";
 import SideLogoBar from "./ui/side-logo-bar";
 
 export function CarouselDemo() {
-  const query = `*[_type == "hero"]{
-    _id, content, preheading, heading, poster
-  }`;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const query = `*[_type == "hero"]{
+          _id, content, preheading, heading, poster
+        }`;
+        const result = await client.fetch(query);
+        setData(result || []);
+      } catch (error) {
+        console.error("Error fetching carousel data:", error);
+      }
+    };
 
-  const data = await client.fetch(query);
+    fetchData();
+  }, []);
 
   if (!data || data.length === 0) {
     return (
