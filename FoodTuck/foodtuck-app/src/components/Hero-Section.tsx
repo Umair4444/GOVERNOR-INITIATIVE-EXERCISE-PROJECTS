@@ -16,22 +16,14 @@ import MyButton from "./ui/myButton";
 import SideLogoBar from "./ui/side-logo-bar";
 
 export function CarouselDemo() {
-  // const query = `*[_type == "hero"]{
-  //   _id, content, preheading, heading, poster
-  // }`;
-
-  // const data = await client.fetch(query);
-
-  // if (!data || data.length === 0) {
-  //   return (
-  //     <div className="text-center">No items to display in the carousel.</div>
-  //   );
-  // }
+ 
 
   const [data, setData] = useState<any[]>([]);
+
   const autoplayPlugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
+
   useEffect(() => {
     const fetchData = async () => {
       const query = `*[_type == "hero"]{
