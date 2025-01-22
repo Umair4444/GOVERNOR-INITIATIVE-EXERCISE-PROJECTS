@@ -1,17 +1,31 @@
-"use client";
-
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage"; // Defaults to localStorage for web
 import ProductSlice from "./feature/productSlice";
-import OrderSlice from "./feature/orderSlice";
+import cartSlice from "./feature/cartSlice";
+import blogSlice from "./feature/BlogSlice";
 
-export const store = configureStore({
-  reducer: {
-    product: ProductSlice,
-    order: OrderSlice,
-  },
+const persistConfig = {
+  key: "root",
+  version: 1,
+  storage,
+};
+
+const rootReducer = combineReducers({
+  product: ProductSlice,
+  cart: cartSlice,
+  blogs: blogSlice,
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+});
+
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;

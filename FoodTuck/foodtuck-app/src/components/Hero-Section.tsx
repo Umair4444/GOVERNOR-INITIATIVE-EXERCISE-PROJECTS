@@ -16,27 +16,17 @@ import MyButton from "./ui/myButton";
 import SideLogoBar from "./ui/side-logo-bar";
 
 export function CarouselDemo() {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const query = `*[_type == "hero"]{
-          _id, content, preheading, heading, poster
-        }`;
-        const result = await client.fetch(query);
-        setData(result || []);
-      } catch (error) {
-        console.error("Error fetching carousel data:", error);
-      }
-    };
+  // const query = `*[_type == "hero"]{
+  //   _id, content, preheading, heading, poster
+  // }`;
 
-    fetchData();
-  }, []);
+  // const data = await client.fetch(query);
 
-  if (!data || data.length === 0) {
-    return (
-      <div className="text-center">No items to display in the carousel.</div>
-    );
-  }
+  // if (!data || data.length === 0) {
+  //   return (
+  //     <div className="text-center">No items to display in the carousel.</div>
+  //   );
+  // }
 
   const [data, setData] = useState<any[]>([]);
   const autoplayPlugin = useRef(
@@ -63,8 +53,8 @@ export function CarouselDemo() {
   return (
     <>
       {/*Main PAge Hero Component section */}
-      <div className="flex mt-20 ">
-        <div className=" hidden md:block">
+      <div className="flex mt-20 h-[90%]">
+        <div className=" hidden md:block  mt-10">
           <SideLogoBar />
         </div>
 
@@ -78,7 +68,7 @@ export function CarouselDemo() {
             {data.map((item: any) => (
               <CarouselItem key={item._id}>
                 <div className="border-none h-screen">
-                  <Card className="border-none h-1/2 border-4">
+                  <Card className="border-none h-1/2">
                     <CardContent className="flex items-center justify-center p-6 text-white bg-black">
                       <div className="flex md:flex-row sm:flex-col-reverse md:justify-between items-center md:items-start gap-4">
                         <div className="w-full md:w-5/12 text-center flex flex-col gap-4 items-center justify-center mb-5 md:mb-0 md:mt-12 lg:mt-16 xl:mt-20">

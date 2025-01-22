@@ -4,7 +4,7 @@ import accordian alert avatar form toggle toast carosel hover-card collapsable p
 1.start with navbar -- done ui/ux
 2.hero section -- done ui/ux
 3.complete footer -- done ui/ux
-4.login form
+4.login form using zod and react hook form
 5.menu card and complete menu in shop using dynamic pages using sanity
 6.blog page with blogs using sanity -- done ui/ux
 7.news from other source using api
@@ -13,9 +13,11 @@ import accordian alert avatar form toggle toast carosel hover-card collapsable p
 10.contact info
 11.not-found done -- done ui/ux
 and middleware
+coditional layout for sanity by not making navbar and footer component render in pathname of "/studio" see:footer and navbar
 
 autherization
 payment
+tracking and shippment
 
 included shadcn libraries:
 accordian
