@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import food from "@/assets/dish/menudish7.png";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/app/Redux-toolkit/feature/cartSlice";
 import { AppDispatch, RootState } from "@/app/Redux-toolkit/store";
@@ -20,40 +19,45 @@ const Page = ({ params }: { params: { item: string } }) => {
     }
   }, [dispatch, status]);
 
-  const find: any = products.find(
-    (item : IProduct) => item.slug === params.item
+  // Find the product dynamically after products are fetched
+  const find: IProduct | undefined = products.find(
+    (item: IProduct) => item.slug === params.item
   );
 
-  const [cartItem, setCartItem] = useState({
-    Product_id: find.id,
-    id: find.id,
-    title: find.title,
-    image: find.image,
-    slug: find.slug,
-    price: find.price,
-    category: find.category,
-    description: find.description,
-    flavors: find.flavors,
-    topping: find.toppings,
-    quantity: 1,
-    discount: find.discount,
-    availability: find.availability ? "Available" : "Not Available",
-    uuid: find.uuid,
-  });
+  // Local state for cart item
+  const [cartItem, setCartItem] = useState<any | null>(null);
 
-  if (!find) {
-    return <h1>No Product Found</h1>;
-  }
+  useEffect(() => {
+    if (find) {
+      setCartItem({
+        id: find.id,
+        title: find.title,
+        image: find.image,
+        slug: find.slug,
+        price: find.price,
+        category: find.category,
+        description: find.description,
+        flavors: find.flavors,
+        topping: find.toppings,
+        quantity: 1,
+        discount: find.discount,
+        availability: find.available ? "Available" : "Not Available",
+        uuid: find.uuid,
+      });
+    }
+  }, [find]);
 
   if (status === "loading")
     return <p className="text-lg text-gray-400">Loading...</p>;
   if (status === "failed")
     return <p className="text-lg text-red-500">Error: {error}</p>;
+  if (!find) return <h1 className="text-xl font-semibold">No Product Found</h1>;
 
   const handleAddToCart = () => {
-    dispatch(addToCart(cartItem)); // Add item to the cart
-    // Reset the quantity to 0 after adding to cart
-    setCartItem({ ...cartItem, quantity: 1 });
+    if (cartItem) {
+      dispatch(addToCart(cartItem)); // Add item to the cart
+      setCartItem({ ...cartItem, quantity: 1 }); // Reset the quantity
+    }
   };
 
   return (
@@ -63,9 +67,11 @@ const Page = ({ params }: { params: { item: string } }) => {
           {/* Product Image */}
           <div className="relative">
             <Image
-              src={food}
+              src={find.image || "/default-image.jpg"} // Fallback to default image
               alt={find.title}
               className="w-full h-72 object-cover"
+              width={500}
+              height={500}
             />
           </div>
 
@@ -93,9 +99,9 @@ const Page = ({ params }: { params: { item: string } }) => {
             {/* Extras */}
             <div className="mt-4">
               <h3 className="text-xl text-black">Extras:</h3>
-              {Array.isArray(find.topping) && find.topping.length > 0 ? (
+              {Array.isArray(find.toppings) && find.toppings.length > 0 ? (
                 <div className="flex flex-wrap gap-2 mt-2">
-                  {find.topping.map((topping: string, index: number) => (
+                  {find.toppings.map((topping: string, index: number) => (
                     <span
                       key={index}
                       className="bg-yellow-500 text-black py-1 px-3 rounded-full text-sm font-semibold"
@@ -114,6 +120,7 @@ const Page = ({ params }: { params: { item: string } }) => {
               <div className="flex items-center">
                 <button
                   type="button"
+                  aria-label="Decrease quantity"
                   onClick={() =>
                     setCartItem({
                       ...cartItem,
@@ -125,14 +132,15 @@ const Page = ({ params }: { params: { item: string } }) => {
                   -
                 </button>
                 <span className="mx-4 text-lg font-semibold text-black">
-                  {cartItem.quantity}
+                  {cartItem?.quantity || 1}
                 </span>
                 <button
                   type="button"
+                  aria-label="Increase quantity"
                   onClick={() =>
                     setCartItem({
                       ...cartItem,
-                      quantity: cartItem.quantity + 1,
+                      quantity: (cartItem?.quantity || 1) + 1,
                     })
                   }
                   className="bg-gray-300 hover:bg-gray-400 text-black text-4xl px-4 py-2 rounded-full"
@@ -145,6 +153,7 @@ const Page = ({ params }: { params: { item: string } }) => {
               <button
                 onClick={handleAddToCart}
                 className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
+                aria-label="Add to cart"
               >
                 Add to Cart
               </button>
