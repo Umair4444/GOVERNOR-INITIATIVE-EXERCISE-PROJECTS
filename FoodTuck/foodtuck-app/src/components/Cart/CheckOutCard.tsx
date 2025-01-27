@@ -51,7 +51,7 @@ const CheckOutCard = () => {
                       className="w-20"
                     />
                   </div>
-                  <div className="flex flex-c.ol items-start">
+                  <div className="flex flex-col items-start">
                     <h3 className="font-bold text-[16px]">{res.title}</h3>
                     <h6 className="text-sm">Quantity : {res.quantity} Pcs</h6>
                     <h6 className="text-sm">
