@@ -32,7 +32,6 @@ const CheckOutCard = () => {
     return item.price * item.quantity;
   };
 
-
   return (
     <div className="bg-white text-black mt-20 border-2 flex flex-col mx-2 pb-2 rounded-md">
       <Accordion type="single" collapsible>
@@ -51,7 +50,7 @@ const CheckOutCard = () => {
                       className="w-20"
                     />
                   </div>
-                  <div className="flex flex-col items-start">
+                  <div className="flex flex-col items-start ">
                     <h3 className="font-bold text-[16px]">{res.title}</h3>
                     <h6 className="text-sm">Quantity : {res.quantity} Pcs</h6>
                     <h6 className="text-sm">
