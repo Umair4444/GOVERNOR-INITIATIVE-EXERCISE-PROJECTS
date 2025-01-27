@@ -1,23 +1,24 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { client } from "@/sanity/lib/client";
+import { IBlog } from "@/app/utils/Types";
 
-// Define an interface for the blog data
-interface Blog {
-  id: string;
-  title: string;
-  slug: string;
-  content: string;
-  summary: string;
-  author: string;
-  image: string;
-  tags: string[];
-  category: string;
-  createdAt: string;
-  isPublished: boolean;
-}
+// // Define an interface for the blog data
+// interface Blog {
+//   id: string;
+//   title: string;
+//   slug: string;
+//   content: string;
+//   summary: string;
+//   author: string;
+//   image: string;
+//   tags: string[];
+//   category: string;
+//   createdAt: string;
+//   isPublished: boolean;
+// }
 
 interface BlogState {
-  blogs: Blog[];
+  blogs: IBlog[];
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null;
 }

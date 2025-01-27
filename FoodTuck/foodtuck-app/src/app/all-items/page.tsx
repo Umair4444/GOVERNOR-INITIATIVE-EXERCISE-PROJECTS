@@ -1,50 +1,56 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import cookie from "@/assets/dish/menudish5.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../Redux-toolkit/store";
 import { IProduct } from "../utils/Types";
+import { fetchProducts } from "../Redux-toolkit/feature/productSlice";
+import { useRouter } from "next/navigation";
 
 const Products = () => {
-  const products = useSelector((state: any) => state.product);
+  const dispatch = useDispatch<AppDispatch>();
+  const { status, error, products } = useSelector(
+    (state: RootState) => state.product
+  );
   console.log(products);
 
-  return (
-    <div className=" bg-white text-black flex justify-center py-10">
-      <div className="grid grid-cols-4">
-        {products.map((items: IProduct) => (
-          <div key={items.id} className="mx-5 mb-5">
-            <div className="px-3 grid  gap-2 py-3 ">
-              <div>
-                <div>
-                  <Image src={cookie} alt="cookie" className="w-full" />
-                </div>
+  const router = useRouter();
 
-                <Link href={`/all-items/${items.id}`}>
-                  <button className="px-5 py-3 my-5 bg-yellow-500 rounded-lg font-bold text-black border w-full">
-                    Order Now
-                  </button>{" "}
-                </Link>
-              </div>
-            </div>
-            <div className="grid gap-3 content-start pt-5 text-lg border-2 mx-2">
-              <div>Dish Name : {items.title}</div>
-              <div>Category : {items.category}</div>
-              <div>Price : {items.price}</div>
-              <div>Flavors : {items.flavors}</div>
-              <div className="grid grid-flow-col gap-1">
-                Extras :{" "}
-                {items.topping.map((res: any) => (
-                  <div key={res.id} className="flex gap-2 px-1 w-fit text-nowrap text-sm font-bold py-1 bg-yellow-500 text-black">
-                    {res}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch, status]);
+
+  if (status === "loading") return <p>Loading products...</p>;
+  if (status === "failed") return <p>Error: {error}</p>;
+
+  return (
+    <div className="grid grid-cols-4 gap-5 py-10">
+      {products.map((product: IProduct) => (
+        <div key={product.id} className="shadow-sm shadow-yellow-500">
+          <Image
+            src={product.image}
+            alt={product.title}
+            className="w-full"
+            width={500}
+            height={500}
+          />
+          <h3 className="text-xl">{product.title}</h3>
+          <p>{product.description}</p>
+          <p>Category: {product.category}</p>
+          <p>Price: ${product.price}</p>
+          {product.discount && (
+            <p className="text-red-500">Discount: {product.discount}% Off</p>
+          )}
+          <button
+            onClick={() => router.push(`/all-items/${product.slug}`)}
+            className="bg-yellow-500 px-6 py-1 w-full"
+          >
+            Order Now
+          </button>
+        </div>
+      ))}
     </div>
   );
 };

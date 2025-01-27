@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <>
       {/* now navbar will not be shown in studio */}
-      {pathname !== "/studio" ? (
-        <div className="w-full flex flex-col gap-5 mt-5 mb-8 sm:items-center lg:items-stretch sticky top-0 bg-black py-4 ">
+      {pathname && !pathname.startsWith("/studio") ? (
+        <div className="w-full flex flex-col gap-5 mt-5 mb-8 sm:items-center lg:items-stretch sticky top-0 z-40 bg-black py-4 ">
           <div className="flex items-center justify-center text-2xl font-bold font-helvetica ">
             <Link href={"/"}>
               <h1 className="text-[#FF9F0D]">
@@ -42,7 +42,7 @@ const Navbar = () => {
                   <Link href={"/menu"}>Menu</Link>
                 </li>
                 <li className="hover:text-yellow-600  ">
-                  <Link href={"/blog"}>Blog</Link>
+                  <Link href={"/blogs"}>Blogs</Link>
                 </li>
                 <li className="text-nowrap hover:text-yellow-600 ">
                   <Link href={"/all-items"}>All Itmes</Link>
@@ -82,7 +82,7 @@ const Navbar = () => {
                     className="invert cursor-pointer "
                   />
                   {cart.length > 0 && (
-                    <span className="absolute top-[-14px] left-3 bg-red-400  rounded-full text-white w-[20px] h-[20px] flex justify-center items-center p-1 text-sm right-0">
+                    <span className="absolute top-[-14px] left-3 bg-yellow-400  rounded-full text-black font-black w-[20px] h-[20px] flex justify-center items-center p-1 text-sm right-0">
                       {cart.length}
                     </span>
                   )}

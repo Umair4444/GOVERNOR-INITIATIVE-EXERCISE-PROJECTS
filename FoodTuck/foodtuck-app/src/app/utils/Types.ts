@@ -1,26 +1,27 @@
-export type IProduct = {
-  id: number;
+export interface IProduct {
+  quantity: any;
+  id: string;
   title: string;
-  image: string[] | string;
   slug: string;
-  price: number;
   category: string;
+  available: boolean;
   description: string;
-  flavors: string | string[];
-  topping: string[];
-  quantity: number[] | number;
-  discount: number | string;
-  Reviews: string[] | string;
-  Rating: string | string[] | number[] | number;
+  image: string;
+  tags: string[];
+  flavors: string[];
+  toppings: string[];
+  price: number;
+  discount: number;
   availability: boolean;
-};
+  uuid: number;
+}
 
 export type ICart = {
   [x: string]: any;
   Product_id: IProduct;
   id: number;
   title: string;
-  image: string[] | string;
+  image: string ;
   availability: boolean;
   slug: string;
   category: string;
@@ -30,14 +31,15 @@ export type ICart = {
   uuid: string | number | undefined;
   price: number;
   quantity: number;
-  discount: number;
+  discount: number | string;
 };
 export type IOrder = {
+  [x: string]: any;
   Product_id: IProduct;
   Cart_id: ICart;
   id: number;
   title: string;
-  image: string[] | string;
+  image: string[] ;
   slug: string;
   price: number;
   category: string;
@@ -50,6 +52,7 @@ export type IOrder = {
 };
 
 export type IRider = {
+  [x: string]: any;
   Product_id: number;
   Cart_id: ICart;
   Order_id: number;
@@ -63,7 +66,8 @@ export type IRider = {
 };
 
 export interface IBlog {
-  id: number;
+  [x: string]: any;
+  id: string;
   title: string;
   slug: string;
   content: string;

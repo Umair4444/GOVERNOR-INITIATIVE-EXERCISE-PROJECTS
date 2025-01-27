@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import Timelogo from "@/assets/ClockClockwise.png";
@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <>
       {/* now navbar will not be shown in studio */}
-      {pathname !== "/studio" ? (
+      {pathname && !pathname.startsWith("/studio") ? (
         <div className="w-full min-h-full mt-20">
           <div className="flex flex-col gap-8 ">
             <div className="flex flex-col mx-2">

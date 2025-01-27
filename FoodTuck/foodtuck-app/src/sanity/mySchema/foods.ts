@@ -1,12 +1,21 @@
-const food = {
+ const food = {
   name: "food",
   type: "document",
   title: "Food",
   fields: [
     {
-      name: "name",
+      name: "title",
       type: "string",
       title: "Food Name",
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
     },
     {
       name: "category",
@@ -21,15 +30,35 @@ const food = {
       title: "Current Price",
     },
     {
-      name: "originalPrice",
+      name: "discount",
       type: "number",
-      title: "Original Price",
-      description: "Price before discount (if any)",
+      title: "Discount",
+      description: "What discount are you oferring?",
     },
     {
       name: "tags",
       type: "array",
       title: "Tags",
+      of: [{ type: "string" }],
+      options: {
+        layout: "tags",
+      },
+      description: "Tags for categorization (e.g., Best Seller, Popular, New)",
+    },
+    {
+      name: "toppings",
+      type: "array",
+      title: "Toppings",
+      of: [{ type: "string" }],
+      options: {
+        layout: "tags",
+      },
+      description: "Tags for categorization (e.g., Best Seller, Popular, New)",
+    },
+    {
+      name: "flavors",
+      type: "array",
+      title: "Flavors",
       of: [{ type: "string" }],
       options: {
         layout: "tags",

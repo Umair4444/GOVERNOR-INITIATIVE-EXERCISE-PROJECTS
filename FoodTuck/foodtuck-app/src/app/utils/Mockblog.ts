@@ -2,7 +2,7 @@ import { IBlog } from "./Types";
 
 export const mockBlogs: IBlog[] = [
   {
-    id: 1,
+    id: "1",
     title: "The Art of French Pastries",
     slug: "art-of-french-pastries",
     content:
@@ -27,7 +27,7 @@ export const mockBlogs: IBlog[] = [
     ],
   },
   {
-    id: 2,
+    id: "2",
     title: "A Day in the Life of a Michelin Star Chef",
     slug: "life-of-michelin-chef",
     content:
@@ -51,7 +51,7 @@ export const mockBlogs: IBlog[] = [
     ],
   },
   {
-    id: 3,
+    id: "3",
     title: "Street Food Wonders: The Best Tacos in Mexico City",
     slug: "best-tacos-mexico-city",
     content:
@@ -75,7 +75,7 @@ export const mockBlogs: IBlog[] = [
     ],
   },
   {
-    id: 4,
+    id: "4",
     title: "The Science Behind Perfect Pasta",
     slug: "science-behind-perfect-pasta",
     content:

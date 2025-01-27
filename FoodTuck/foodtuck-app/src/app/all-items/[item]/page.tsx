@@ -1,19 +1,28 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import food from "@/assets/dish/menudish7.png";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/app/Redux-toolkit/feature/cartSlice";
-import { AppDispatch } from "@/app/Redux-toolkit/store";
+import { AppDispatch, RootState } from "@/app/Redux-toolkit/store";
+import { fetchProducts } from "@/app/Redux-toolkit/feature/productSlice";
+import { IProduct } from "@/app/utils/Types";
 
 const Page = ({ params }: { params: { item: string } }) => {
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
+  const { products, status, error } = useSelector(
+    (state: RootState) => state.product
+  );
 
-  const products = useSelector((state: any) => state.product);
-  console.log(products);
-  const find = products.find((item: any) => item.id == params.item);
-  console.log(find);
-  // console.log(dispatch);
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch, status]);
+
+  const find: any = products.find(
+    (item : IProduct) => item.slug === params.item
+  );
 
   const [cartItem, setCartItem] = useState({
     Product_id: find.id,
@@ -25,72 +34,99 @@ const Page = ({ params }: { params: { item: string } }) => {
     category: find.category,
     description: find.description,
     flavors: find.flavors,
-    topping: find.topping,
-    quantity: find.quantity,
+    topping: find.toppings,
+    quantity: 1,
     discount: find.discount,
     availability: find.availability ? "Available" : "Not Available",
     uuid: find.uuid,
   });
 
-  console.log(cartItem);
+  if (!find) {
+    return <h1>No Product Found</h1>;
+  }
+
+  if (status === "loading")
+    return <p className="text-lg text-gray-400">Loading...</p>;
+  if (status === "failed")
+    return <p className="text-lg text-red-500">Error: {error}</p>;
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(cartItem)); // Add item to the cart
+    // Reset the quantity to 0 after adding to cart
+    setCartItem({ ...cartItem, quantity: 1 });
+  };
 
   return (
-    <div className="bg-white text-black flex py-10">
-      <div className="px-3 grid grid-flow-col gap-14 py-3 w-2/3  justify-items-center items-center">
-        <div className="w-full grid ">
-          <Image src={food} alt="" className="w-full" />
-        </div>
-        <div className="grid self-start justify-self-start py-4 text-xl gap-4 justify-start">
-          <div className="text-2xl font-bold">Name : {find.title}</div>
-          <div className="text-lg font-semibold">{find.description}</div>
-          <div className="">
-            Category :
-            <span className="mx-14 px-10 bg-yellow-500 border-2 text-black hover:text-white">
-              {find.category}{" "}
-            </span>{" "}
+    <div className="bg-white py-10 px-4">
+      <div className="flex justify-center">
+        <div className="max-w-lg w-full bg-white rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
+          {/* Product Image */}
+          <div className="relative">
+            <Image
+              src={food}
+              alt={find.title}
+              className="w-full h-72 object-cover"
+            />
           </div>
-          <div className="">
-            Price :{" "}
-            <span className="mx-14 px-10 bg-yellow-500 text-black hover:text-white">
-              {find.price}
-            </span>
-          </div>
-          <div className="flex gap-10">
-            Extras :
-            {find.topping.map((res: any) => (
-              <div key={res.id} className="flex w-fit gap-4 border rounded-md">
-                <button className="px-3 bg-yellow-500 text-black hover:text-white ">
-                  {res}
-                </button>
-              </div>
-            ))}
-          </div>
-          <div className="flex gap-10">
-            Variety :
-            {find.flavors &&
-              find.flavors.map((res: any) => (
-                <div key={res.id} className="flex w-fit gap-4 border rounded-md">
-                  <button className="px-3 bg-yellow-500 text-black hover:text-white ">
-                    {res}
-                  </button>
-                </div>
-              ))}
-          </div>
-          <div>
-            <div className="grid grid-flow-col w-fit gap-4 self-center justify-self-center py-4">
+
+          {/* Product Details */}
+          <div className="p-6">
+            <h2 className="text-3xl font-bold text-black">{find.title}</h2>
+            <p className="text-lg text-gray-700 mt-2">{find.description}</p>
+            <div className="mt-4 flex justify-between items-center">
               <div>
+                <span className="text-xl text-yellow-500 font-semibold">
+                  Category:{" "}
+                </span>
+                <span className="text-lg text-black">{find.category}</span>
+              </div>
+              <div>
+                <span className="text-xl text-yellow-500 font-semibold">
+                  Price:{" "}
+                </span>
+                <span className="text-lg font-bold text-black">
+                  ${find.price}
+                </span>
+              </div>
+            </div>
+
+            {/* Extras */}
+            <div className="mt-4">
+              <h3 className="text-xl text-black">Extras:</h3>
+              {Array.isArray(find.topping) && find.topping.length > 0 ? (
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {find.topping.map((topping: string, index: number) => (
+                    <span
+                      key={index}
+                      className="bg-yellow-500 text-black py-1 px-3 rounded-full text-sm font-semibold"
+                    >
+                      {topping}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <div className="mt-2 text-gray-500">No Extra Items</div>
+              )}
+            </div>
+
+            {/* Quantity Control */}
+            <div className="mt-6 flex items-center justify-between">
+              <div className="flex items-center">
                 <button
                   type="button"
                   onClick={() =>
-                    setCartItem({ ...cartItem, quantity: --cartItem.quantity })
+                    setCartItem({
+                      ...cartItem,
+                      quantity: Math.max(cartItem.quantity - 1, 1),
+                    })
                   }
-                  className="px-4 text-lg bg-slate-400 text-white"
+                  className="bg-gray-300 hover:bg-gray-400 text-black text-4xl px-4 py-2 rounded-full"
                 >
                   -
                 </button>
-              </div>
-              <div>{cartItem.quantity}</div>
-              <div>
+                <span className="mx-4 text-lg font-semibold text-black">
+                  {cartItem.quantity}
+                </span>
                 <button
                   type="button"
                   onClick={() =>
@@ -99,17 +135,19 @@ const Page = ({ params }: { params: { item: string } }) => {
                       quantity: cartItem.quantity + 1,
                     })
                   }
-                  className="px-4 text-lg bg-slate-400 text-white"
+                  className="bg-gray-300 hover:bg-gray-400 text-black text-4xl px-4 py-2 rounded-full"
                 >
                   +
                 </button>
-                <button
-                  className="px-4 mx-5 border-2 bg-blue-500 text-white"
-                  onClick={() => dispatch(addToCart(cartItem))}
-                >
-                  Add to cart
-                </button>
               </div>
+
+              {/* Add to Cart Button */}
+              <button
+                onClick={handleAddToCart}
+                className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
@@ -119,91 +157,3 @@ const Page = ({ params }: { params: { item: string } }) => {
 };
 
 export default Page;
-
-// "use client";
-
-// import React, { useState } from "react";
-// import Image from "next/image";
-// import { useDispatch, useSelector } from "react-redux";
-// import { addToCart } from "@/app/Redux-toolkit/feature/cartSlice";
-// import { RootState } from "@/app/Redux-toolkit/store";
-// import { IProduct } from "@/app/utils/Types";
-
-// const Page = ({ params }: { params: { item: string } }) => {
-//   const dispatch = useDispatch();
-
-//   // Retrieve products from Redux store
-//   const products = useSelector((state: RootState) => state.product);
-
-//   // Find the specific product based on `params.item`
-//   const find = products.find((item: any) => item.id == params.item);
-
-//   // If the product is not found, return a message
-//   if (!find) return <div>Product not found!</div>;
-
-//   // Initialize the cart item state
-//   const [cartItem, setCartItem] = useState({
-//     id: find.id,
-//     title: find.title,
-//     image: find.image,
-//     slug: find.slug,
-//     price: find.price,
-//     category: find.category,
-//     description: find.description,
-//     flavors: find.flavors,
-//     topping: find.topping,
-//     quantity: 1,
-//     discount: find.discount,
-//     // uuid: find.uuid,
-//   });
-
-//   const handleAddToCart = () => {
-//     dispatch(addToCart(cartItem)); // Dispatch action to add item to cart
-//   };
-
-//   return (
-//     <div className="bg-white text-black flex py-10">
-//       <div className="px-3 grid grid-flow-col gap-14 py-3 w-2/3 justify-items-center items-center">
-//         <div className="w-full grid">
-//           <Image src={find.image} alt={find.title} className="w-full" />
-//         </div>
-//         <div className="grid self-start justify-self-start py-4 text-xl gap-4">
-//           <div>Name: {find.title}</div>
-//           <div>{find.description}</div>
-//           <div>Ingredients:</div>
-//           <div>Ratings:</div>
-//           <div>Reviews:</div>
-//         </div>
-//         <div className="grid grid-flow-col w-fit gap-4 self-center justify-self-center my-3">
-//           <div>
-//             <button
-//               type="button"
-//               onClick={() => setCartItem({ ...cartItem, quantity: Math.max(cartItem.quantity - 1, 1) })}
-//               className="px-4 text-lg bg-slate-400 text-white"
-//             >
-//               -
-//             </button>
-//           </div>
-//           <div>{cartItem.quantity}</div>
-//           <div>
-//             <button
-//               type="button"
-//               onClick={() => setCartItem({ ...cartItem, quantity: cartItem.quantity + 1 })}
-//               className="px-4 text-lg bg-slate-400 text-white"
-//             >
-//               +
-//             </button>
-//             <button
-//               className="px-5 py-2 mx-5 border-2 bg-blue-500 text-white"
-//               onClick={handleAddToCart}
-//             >
-//               Add to cart
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Page;
