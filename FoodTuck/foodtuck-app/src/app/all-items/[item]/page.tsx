@@ -9,6 +9,7 @@ import { fetchProducts } from "@/app/Redux-toolkit/feature/productSlice";
 import { IProduct } from "@/app/utils/Types";
 import loading from "@/assets/loading.jpg";
 import { addToWish } from "@/app/Redux-toolkit/feature/wishSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 const Page = ({ params }: { params: { item: string } }) => {
   const dispatch = useDispatch<AppDispatch>();
@@ -56,10 +57,23 @@ const Page = ({ params }: { params: { item: string } }) => {
     return <p className="text-lg text-red-500">Error: {error}</p>;
   if (!find) return <h1 className="text-xl font-semibold">No Product Found</h1>;
 
+  const notify = () => toast("Added Successfully!!");
+
   const handleAddToCart = () => {
     if (cartItem) {
       dispatch(addToCart(cartItem)); // Add item to the cart
       setCartItem({ ...cartItem, quantity: 1 }); // Reset the quantity
+
+      toast.success("Added to Cart Succesfully!", {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   };
 
@@ -67,6 +81,16 @@ const Page = ({ params }: { params: { item: string } }) => {
     if (cartItem) {
       dispatch(addToWish(cartItem)); // Add item to wishlist
     }
+    toast.success("Added to Wishlist Succesfully!", {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   };
 
   return (
@@ -195,6 +219,7 @@ const Page = ({ params }: { params: { item: string } }) => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "FoodTuck Parlor",
   description: "Online App for Foodies",
+  icons: {
+    icon: "/favicon.png", // Path to your favicon inside the `public` folder
+  },
 };
 
 export default function RootLayout({
