@@ -16,19 +16,19 @@ const Wishlist = () => {
   };
 
   return (
-    <div className="min-h-screen p-5 bg-gray-100 text-black">
-      <h1 className="text-2xl font-bold mb-4">Your Wishlist</h1>
+    <div className="min-h-screen  p-5 bg-gray-100 text-black">
+      <h1 className="text-2xl text-center font-bold mb-4 ">Your Wishlist</h1>
       {wishlist.length === 0 ? (
-        <p className="text-gray-600">No items in wishlist.</p>
+        <p className="text-gray-600 text-center">No items in wishlist.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {wishlist.map((item) => (
             <div
               key={item.id}
-              className="bg-white p-4 shadow-lg rounded-lg flex flex-col items-center"
+              className="bg-white p-4 shadow-lg rounded-lg flex flex-col items-center relative"
             >
               {/* Accordion for image */}
-              <div className="relative w-full">
+              <div className="relative w-full ">
                 {openImage === item.id && (
                   <div className="relative w-full h-60">
                     <Image
@@ -80,10 +80,10 @@ const Wishlist = () => {
                 {item.description}
               </p>
 
-              <div className="mt-4 w-full flex justify-between items-center">
+              <div className="mt-10 w-full flex justify-between items-center  ">
                 <button
                   onClick={() => dispatch(removeFromWish(item.id))}
-                  className="bg-red-500 text-white px-4 py-2 rounded-lg w-full"
+                  className="bg-red-500 text-white px-4 py-2 rounded-lg w-full absolute bottom-0 left-0 "
                 >
                   Remove from Wishlist
                 </button>
