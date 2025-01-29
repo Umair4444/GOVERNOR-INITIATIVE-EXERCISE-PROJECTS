@@ -276,7 +276,7 @@ export function LoginForm() {
               />
               <div className="flex items-center justify-between mt-2">
                 <h1 className="text-blue-500 hover:underline mx-3">
-                  <Link href="/signup">I'm a New User! SignUp Now</Link>
+                  <Link href="/signup">I am a New User! SignUp Now</Link>
                 </h1>
                 <h1 className="text-blue-500 hover:underline mx-3">
                   <Link href="/forgot-password">Forget Password</Link>
