@@ -1,5 +1,4 @@
 import { Great_Vibes } from "next/font/google";
-import Link from "next/link";
 import React from "react";
 import food from "@/assets/dish/fooditems4.png";
 import food1 from "@/assets/dish/Image.png";
@@ -24,17 +23,47 @@ const ChefMenu = () => {
         <Tabs defaultValue="breakfast" className="mt-10">
           <TabsList className="bg-black text-white flex justify-evenly items-center gap-6 text-xl font-bold uppercase ">
             <TabsTrigger
-              className="py-2 px-4 rounded-md transition-colors hover:bg-gray-700 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
+              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
               value="breakfast"
             >
               Breakfast
             </TabsTrigger>
-            <TabsTrigger value="lunch">Lunch</TabsTrigger>
-            <TabsTrigger value="dinner">Dinner</TabsTrigger>
-            <TabsTrigger value="snacks">Snacks</TabsTrigger>
-            <TabsTrigger value="soups">Soups</TabsTrigger>
-            <TabsTrigger value="drinks">Drinks</TabsTrigger>
-            <TabsTrigger value="deserts">Deserts</TabsTrigger>
+            <TabsTrigger
+              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
+              value="lunch"
+            >
+              Lunch
+            </TabsTrigger>
+            <TabsTrigger
+              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
+              value="dinner"
+            >
+              Dinner
+            </TabsTrigger>
+            <TabsTrigger
+              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
+              value="snacks"
+            >
+              Snacks
+            </TabsTrigger>
+            <TabsTrigger
+              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
+              value="soups"
+            >
+              Soups
+            </TabsTrigger>
+            <TabsTrigger
+              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
+              value="drinks"
+            >
+              Drinks
+            </TabsTrigger>
+            <TabsTrigger
+              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
+              value="deserts"
+            >
+              Deserts
+            </TabsTrigger>
           </TabsList>
           <TabsContent
             value="breakfast"

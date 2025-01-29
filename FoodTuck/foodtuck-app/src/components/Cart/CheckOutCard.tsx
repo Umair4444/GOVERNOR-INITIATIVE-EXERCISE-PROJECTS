@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ICart } from "@/app/utils/Types";
 import { removeFromCart } from "@/app/Redux-toolkit/feature/cartSlice";

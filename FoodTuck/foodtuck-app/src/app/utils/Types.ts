@@ -21,7 +21,7 @@ export type ICart = {
   Product_id: IProduct;
   id: number;
   title: string;
-  image: string ;
+  image: string;
   availability: boolean;
   slug: string;
   category: string;
@@ -33,13 +33,25 @@ export type ICart = {
   quantity: number;
   discount: number | string;
 };
+export type IWish = {
+  Product_id: IProduct;
+  id: number;
+  title: string;
+  image: string;
+  availability: boolean;
+  slug: string;
+  category: string;
+  description: string;
+  price: number;
+  uuid: string | number | undefined;
+};
 export type IOrder = {
   [x: string]: any;
   Product_id: IProduct;
   Cart_id: ICart;
   id: number;
   title: string;
-  image: string[] ;
+  image: string[];
   slug: string;
   price: number;
   category: string;

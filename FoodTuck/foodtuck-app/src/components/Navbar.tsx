@@ -1,19 +1,20 @@
 "use client";
-import Image from "next/image";
-import saearch from "@/assets/logo/MagnifyingGlass.png";
-import handbag from "@/assets/logo/Handbag.png";
-
-import login from "@/assets/logo/User.png";
+import { BsCart4 } from "react-icons/bs";
+import { FaUser } from "react-icons/fa6";
+import { FaSearch, FaHeart } from "react-icons/fa";
 import Link from "next/link";
 import { Hamburger } from "./Hamburger";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
+import { IWish } from "@/app/utils/Types";
 
 const Navbar = () => {
   const pathname = usePathname();
   const cart = useSelector((state: any) => state.cart);
+  const wishlist = useSelector((state: { wish: IWish[] }) => state.wish);
 
-  console.log(pathname);
+  console.log(wishlist);
+
   return (
     <>
       {/* now navbar will not be shown in studio */}
@@ -68,19 +69,12 @@ const Navbar = () => {
                   placeholder="Search"
                   className="outline-none rounded-full w-[20rem] md:w-[25rem] px-4 bg-transparent text-white text-lg font-normal placeholder:text-white "
                 />
-                <Image
-                  src={saearch}
-                  alt="search"
-                  className=" invert cursor-pointer"
-                />
+                <FaSearch className="text-xl mx-2 my-1" />
               </div>
-              <div>
-                <Link href={"/checkout"} className="relative">
-                  <Image
-                    src={handbag}
-                    alt="handbag"
-                    className="invert cursor-pointer "
-                  />
+              <div className="relative text-xl">
+                <Link href={"/checkout"}>
+                  <BsCart4 />
+
                   {cart.length > 0 && (
                     <span className="absolute top-[-14px] left-3 bg-yellow-400  rounded-full text-black font-black w-[20px] h-[20px] flex justify-center items-center p-1 text-sm right-0">
                       {cart.length}
@@ -88,13 +82,20 @@ const Navbar = () => {
                   )}
                 </Link>
               </div>
-              <div>
+              <div className="relative text-xl">
+                <Link href={"/wishlist"}>
+                  <FaHeart />
+
+                  {wishlist.length > 0 && (
+                    <span className="absolute top-[-14px] left-3 bg-yellow-400  rounded-full text-black font-black w-[20px] h-[20px] flex justify-center items-center p-1 text-sm right-0">
+                      {wishlist.length}
+                    </span>
+                  )}
+                </Link>
+              </div>
+              <div className="relative text-xl ">
                 <Link href={"/login"}>
-                  <Image
-                    src={login}
-                    alt="login"
-                    className="invert cursor-pointer "
-                  />
+                  <FaUser />
                 </Link>
               </div>
             </div>
