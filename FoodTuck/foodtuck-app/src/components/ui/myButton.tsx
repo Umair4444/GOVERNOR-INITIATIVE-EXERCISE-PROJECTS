@@ -11,7 +11,7 @@ const MyButton = (props: any) => {
               props.border || "0"
             } `}
             type="button"
-            onClick={props.onclick}
+            onClick={props.onClick}
           >
             {props.title}
           </button>
