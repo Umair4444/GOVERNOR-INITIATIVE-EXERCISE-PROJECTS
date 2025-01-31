@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { IProduct } from "@/app/utils/Types"; // Make sure this is properly defined
+import { IProduct } from "@/app/utils/Types"; 
 import { client } from "@/sanity/lib/client";
 
 // ProductState interface

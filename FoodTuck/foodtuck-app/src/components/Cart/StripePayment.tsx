@@ -65,7 +65,6 @@ const StripePayment = ({ amount }: { amount: number }) => {
           mode: "payment",
           amount: convertToSubCurrency(amount),
           currency: "usd",
-          
         }}
       >
         <CheckoutPage amount={amount} />

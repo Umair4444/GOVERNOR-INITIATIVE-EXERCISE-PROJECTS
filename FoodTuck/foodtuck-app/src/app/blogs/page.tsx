@@ -84,7 +84,7 @@ const BlogList = () => {
             </div>
           </div>
         ))}
-        Pagination Controls
+        {/* Pagination Controls */}
         <div className="flex justify-center mt-8">
           {/* Previous Button */}
           <button

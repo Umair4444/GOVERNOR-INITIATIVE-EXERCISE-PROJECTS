@@ -5,7 +5,7 @@ import aboutus1 from "@/assets/dish/aboutus_1.png";
 import aboutus2 from "@/assets/dish/aboutus_2.png";
 import aboutus3 from "@/assets/dish/aboutus_3.png";
 import { Great_Vibes } from "next/font/google";
-import MyButton from "./ui/myButton";
+import MyButton from "../ui/myButton";
 
 const great_Vibes = Great_Vibes({
   weight: "400",

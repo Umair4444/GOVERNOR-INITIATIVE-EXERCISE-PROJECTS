@@ -12,8 +12,8 @@ import Autoplay from "embla-carousel-autoplay";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import MyButton from "./ui/myButton";
-import SideLogoBar from "./ui/side-logo-bar";
+import MyButton from "../ui/myButton";
+import SideLogoBar from "../ui/side-logo-bar";
 
 export function HeroSection() {
   const [data, setData] = useState<any[]>([]);
@@ -52,10 +52,10 @@ export function HeroSection() {
             onMouseEnter={autoplayPlugin.current.stop}
             onMouseLeave={autoplayPlugin.current.reset}
           >
-            <CarouselContent className="w-full">
+            <CarouselContent className="w-fit">
               {data.map((item: any) => (
                 <CarouselItem key={item._id}>
-                  <div className="w-2/3 md:w-full h-auto items-center justify-center mx-28 md:m-0 ">
+                  <div className="w-2/3 md:w-full h-auto items-center justify-center  md:m-0 ">
                     <Card className="border-none h-auto">
                       <CardContent className="flex flex-col-reverse md:flex-row items-center justify-center p-6 text-white bg-black">
                         {/* Text Section */}
@@ -89,8 +89,9 @@ export function HeroSection() {
                             src={urlFor(item.poster).url()}
                             width={300}
                             height={300}
-                            alt={item.heading || "Hero Image"}
+                            alt={item.handling || "Hero Image"}
                             className="w-full h-auto object-cover"
+                            priority
                           />
                         </div>
                       </CardContent>
@@ -99,8 +100,14 @@ export function HeroSection() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="bg-black lg:mx-2 text-yellow-500" />
-            <CarouselNext className="bg-black lg:mx-2 text-yellow-500" />
+
+            {/* Carousel Arrows */}
+            <div className="absolute top-1/2 left-0  z-10">
+              <CarouselPrevious className="bg-black text-yellow-500 p-4 rounded-full lg:p-6" />
+            </div>
+            <div className="absolute top-1/2 right-0 lg:right-10 z-10 md:mr-4 lg:mr-2 ">
+              <CarouselNext className="bg-black text-yellow-500 p-4 rounded-full lg:p-6" />
+            </div>
           </Carousel>
         )}
       </div>

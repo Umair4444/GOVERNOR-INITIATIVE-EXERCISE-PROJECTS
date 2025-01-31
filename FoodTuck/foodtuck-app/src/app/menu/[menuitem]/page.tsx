@@ -7,11 +7,11 @@ import { addToCart } from "@/app/Redux-toolkit/feature/cartSlice";
 import { AppDispatch, RootState } from "@/app/Redux-toolkit/store";
 import { fetchProducts } from "@/app/Redux-toolkit/feature/productSlice";
 import { IProduct } from "@/app/utils/Types";
-import loading from "@/assets/loading.jpg";
 import { addToWish } from "@/app/Redux-toolkit/feature/wishSlice";
 import { ToastContainer, toast } from "react-toastify";
+import loading from "@/assets/loading.jpg";
 
-const Page = ({ params }: { params: { item: string } }) => {
+const Page = ({ params }: { params: { menuitem: string } }) => {
   const dispatch = useDispatch<AppDispatch>();
   const { products, status, error } = useSelector(
     (state: RootState) => state.product
@@ -25,7 +25,7 @@ const Page = ({ params }: { params: { item: string } }) => {
 
   // Find the product dynamically after products are fetched
   const find: IProduct | undefined = products.find(
-    (item: IProduct) => item.slug === params.item
+    (item: IProduct) => item.slug === params.menuitem
   );
 
   // Local state for cart item

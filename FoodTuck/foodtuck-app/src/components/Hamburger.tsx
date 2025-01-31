@@ -37,13 +37,13 @@ export function Hamburger() {
                     </Link>
                   </li>
                   <li>
-                    <Link href={"/menu"}>Menu</Link>
+                    <Link href={"/deals"}>Deals</Link>
                   </li>
                   <li>
                     <Link href={"/blog"}>Blog</Link>
                   </li>
                   <li>
-                    <Link href={"/page"}>More Pages</Link>
+                    <Link href={"/menu"}>Menu</Link>
                   </li>
                   <li className=" gap-1 items-center">
                     <Link href={"/about"} className="">

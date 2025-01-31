@@ -1,11 +1,8 @@
 // import HeroSection from "@/components/extra/Hero-Component";
-import AboutUsHeroSection from "@/components/About-Us-Component";
-import FoodGalleryComponent from "@/components/Food-Gallery-Component";
-import WhyChooseUsComponent from "@/components/Why-Choose-Us-Component";
-import ChefMenu from "@/components/ChefMenu";
-import { HeroSection } from "@/components/Hero-Section";
-
-
+import AboutUsHeroSection from "@/components/HomePage/About-Us-Component";
+import WhyChooseUsComponent from "@/components/HomePage/Why-Choose-Us";
+import ChefMenu from "@/components/HomePage/ChefMenu";
+import { HeroSection } from "@/components/HomePage/Hero-Section";
 
 export default function Home() {
   return (
@@ -13,7 +10,6 @@ export default function Home() {
       <div>
         <HeroSection />
         <AboutUsHeroSection />
-        <FoodGalleryComponent />
         <WhyChooseUsComponent />
         <ChefMenu />
       </div>

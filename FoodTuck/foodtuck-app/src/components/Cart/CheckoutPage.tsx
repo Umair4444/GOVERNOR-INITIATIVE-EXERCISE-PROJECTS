@@ -16,7 +16,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
   if (myhost === "localhost:3000") {
     URL = "http://localhost:3000";
   } else {
-    URL = "https://stripe-payment-one-nu.vercel.app";
+    URL = "https://food-tuck-qcommerce-app.vercel.app/";
   }
 
   const stripe = useStripe();
