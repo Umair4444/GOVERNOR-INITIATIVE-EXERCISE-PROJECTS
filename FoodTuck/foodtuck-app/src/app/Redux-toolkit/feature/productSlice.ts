@@ -37,6 +37,7 @@ export const fetchProducts = createAsyncThunk(
     // no cahcing
     // const products = await client.fetch(query, {}, { cache: "no-store" }); // Disable caching
     const products = await client.fetch(query);
+    
     return products.map((item: any) => ({
       id: item._id,
       title: item.title,

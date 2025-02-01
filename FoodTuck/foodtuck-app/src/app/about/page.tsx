@@ -25,8 +25,7 @@ const AboutUs = () => {
       {/* 
       {/* Hero Section */}
       <div className="py-20">
-        {" "}
-        <HeroSection />{" "}
+        <HeroSection />
       </div>
       {/* Why Choose Us */}
       <WhyChooseUs />

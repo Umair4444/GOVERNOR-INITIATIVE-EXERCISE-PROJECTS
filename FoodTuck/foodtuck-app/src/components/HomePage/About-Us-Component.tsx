@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import checkbox from "@//assets/logo/Check.png";
 import aboutus1 from "@/assets/dish/aboutus_1.png";
 import aboutus2 from "@/assets/dish/aboutus_2.png";
 import aboutus3 from "@/assets/dish/aboutus_3.png";
 import { Great_Vibes } from "next/font/google";
 import MyButton from "../ui/myButton";
+import { FaCheck } from "react-icons/fa6";
 
 const great_Vibes = Great_Vibes({
   weight: "400",
@@ -34,7 +34,8 @@ const AboutUsHeroSection = () => {
         </p>
         <div className="flex gap-3 items-center">
           {/* checkbox */}
-          <Image src={checkbox} alt="checkbox" className="invert" />
+          <FaCheck />
+
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <MyButton title="Read More" />

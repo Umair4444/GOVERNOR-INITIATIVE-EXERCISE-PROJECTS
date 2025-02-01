@@ -1,6 +1,5 @@
 import React from "react";
 import CheckOut from "@/components/Cart/CheckOut";
-import { useSelector } from "react-redux";
 
 const checkoutPage = () => {
   return (

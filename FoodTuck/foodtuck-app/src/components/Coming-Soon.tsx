@@ -25,7 +25,6 @@ const ComingSoon = () => {
             xpadding="px-10"
             ypadding="py-2"
             onclick={() => {
-              console.log("click");
               router.push("/");
             }}
           />

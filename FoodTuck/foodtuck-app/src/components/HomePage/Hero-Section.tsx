@@ -42,7 +42,7 @@ export function HeroSection() {
         </div>
 
         {data.length === 0 ? (
-          <div className="text-center">
+          <div className="text-center mt-10">
             No items to display in the carousel.
           </div>
         ) : (
@@ -55,7 +55,7 @@ export function HeroSection() {
             <CarouselContent className="w-fit">
               {data.map((item: any) => (
                 <CarouselItem key={item._id}>
-                  <div className="w-2/3 md:w-full h-auto items-center justify-center  md:m-0 ">
+                  <div className="w-2/3 md:w-full h-auto items-center justify-center px-5  md:m-0 ">
                     <Card className="border-none h-auto">
                       <CardContent className="flex flex-col-reverse md:flex-row items-center justify-center p-6 text-white bg-black">
                         {/* Text Section */}
@@ -105,7 +105,7 @@ export function HeroSection() {
             <div className="absolute top-1/2 left-0  z-10">
               <CarouselPrevious className="bg-black text-yellow-500 p-4 rounded-full lg:p-6" />
             </div>
-            <div className="absolute top-1/2 right-0 lg:right-10 z-10 md:mr-4 lg:mr-2 ">
+            <div className="absolute top-1/2 right-0 lg:right-10 z-10 md:mr-4 lg:mr-2">
               <CarouselNext className="bg-black text-yellow-500 p-4 rounded-full lg:p-6" />
             </div>
           </Carousel>
