@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import CheckOutForm from "./CheckOutForm";
 import CheckOutCard from "./CheckOutCard";
 import TopCard from "@/components/ui/TopCard";
-import Script from "next/script";
 
 const CheckOut = () => {
   const [stripe, setStripe] = useState<any>(null);

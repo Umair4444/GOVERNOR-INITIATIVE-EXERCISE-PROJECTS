@@ -1,19 +1,10 @@
-import createWebStorage from "redux-persist/lib/storage/createWebStorage";
+import storage from "redux-persist/lib/storage"; // ✅ Use this instead of createWebStorage
 
-// Prevents SSR issues by using a noop storage when `window` is undefined
-const createNoopStorage = () => ({
-  getItem: async () => null,
-  setItem: async (_key: string, value: any) => value,
-  removeItem: async () => {},
-});
-
-// Use localStorage only on the client-side
-const storage = typeof window !== "undefined" ? createWebStorage("local") : createNoopStorage();
-
+// Persist configuration for Redux Persist
 const persistConfig = {
   key: "root",
   version: 1,
-  storage,
+  storage, // ✅ Uses localStorage without SSR issues
 };
 
 export default persistConfig;

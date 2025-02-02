@@ -23,6 +23,7 @@
     "@radix-ui/react-switch": "^1.1.2",
     "@radix-ui/react-tabs": "^1.1.2",
     "@radix-ui/react-toast": "^1.2.4",
+    "@react-native-async-storage/async-storage": "^2.1.0",
     "@reduxjs/toolkit": "^2.5.0",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.68.3",

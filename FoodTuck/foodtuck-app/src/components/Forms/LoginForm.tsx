@@ -234,7 +234,8 @@ export function LoginForm() {
                   <FormItem>
                     <FormLabel>Username</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your Name" {...field} />
+                      <Input placeholder="Your Name"
+                      type="text" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

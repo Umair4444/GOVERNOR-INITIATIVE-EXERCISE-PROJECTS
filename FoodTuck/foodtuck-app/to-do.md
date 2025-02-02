@@ -12,11 +12,12 @@ import accordian alert avatar form toggle toast carosel hover-card collapsable p
 9.checkout page and cart using use shopping cart
 10.contact info
 11.not-found done -- done ui/ux
-and middleware
+and middleware -- working on
 coditional layout for sanity by not making navbar and footer component render in pathname of "/studio" see:footer and navbar
 
-autherization
-payment
+autherization -- working on
+payment -- done
+admin panel -- done
 tracking and shippment
 
 included shadcn libraries:

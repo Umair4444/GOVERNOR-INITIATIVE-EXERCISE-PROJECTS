@@ -7,6 +7,7 @@ import Twitter from "@/assets/logo/TwitterLogo.png";
 import Instagram from "@/assets/logo/InstagramLogo.png";
 import Youtube from "@/assets/logo/YoutubeLogo.png";
 import Pintrest from "@/assets/logo/PinterestLogo.png";
+import post from "@/assets/Person.png"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -114,7 +115,7 @@ const Footer = () => {
                 <h5 className="font-bold text-2xl">Recent Posts</h5>
                 <div className="flex gap-2 ">
                   <div>
-                    <Image src={""} alt="post" />
+                    <Image src={post} alt="post" />
                   </div>
                   <div className="flex flex-col">
                     <h6>20-Feb-2022</h6>
@@ -123,7 +124,7 @@ const Footer = () => {
                 </div>
                 <div className="flex gap-2 ">
                   <div>
-                    <Image src={""} alt="post" />
+                    <Image src={post} alt="post" />
                   </div>
                   <div className="flex flex-col">
                     <h6>20-Feb-2022</h6>
@@ -132,7 +133,7 @@ const Footer = () => {
                 </div>
                 <div className="flex gap-2 ">
                   <div>
-                    <Image src={""} alt="post" />
+                    <Image src={post} alt="post" />
                   </div>
                   <div className="flex flex-col">
                     <h6>20-Feb-2022</h6>

@@ -5,7 +5,10 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../Redux-toolkit/store";
 import { IProduct } from "../utils/Types";
-import { fetchProducts } from "../Redux-toolkit/feature/productSlice";
+import {
+  fetchProducts,
+  subscribeToProducts,
+} from "../Redux-toolkit/feature/productSlice";
 import { useRouter } from "next/navigation";
 
 const Products = () => {
@@ -16,7 +19,7 @@ const Products = () => {
 
   // Pagination State
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4; // Define the number of menuitems per page
+  const itemsPerPage = 8; // Define the number of menu items per page
 
   // Calculate the index range for the current page
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -30,6 +33,14 @@ const Products = () => {
     if (status === "idle") {
       dispatch(fetchProducts());
     }
+
+    // Subscribe to live updates
+    const unsubscribe = subscribeToProducts(dispatch);
+
+    // Cleanup subscription on unmount
+    return () => {
+      unsubscribe();
+    };
   }, [dispatch, status]);
 
   if (status === "loading") {
