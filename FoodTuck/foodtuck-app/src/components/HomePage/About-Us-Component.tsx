@@ -32,7 +32,7 @@ const AboutUsHeroSection = () => {
           sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in
           consequat.
         </p>
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-2 items-center">
           {/* checkbox */}
           <FaCheck />
 

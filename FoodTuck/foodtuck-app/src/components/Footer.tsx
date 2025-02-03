@@ -2,14 +2,18 @@
 import React from "react";
 import Image from "next/image";
 import Timelogo from "@/assets/ClockClockwise.png";
-import Facebook from "@/assets/logo/FacebookLogo.png";
-import Twitter from "@/assets/logo/TwitterLogo.png";
-import Instagram from "@/assets/logo/InstagramLogo.png";
-import Youtube from "@/assets/logo/YoutubeLogo.png";
-import Pintrest from "@/assets/logo/PinterestLogo.png";
-import post from "@/assets/Person.png"
+
+import post from "@/assets/Person.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  FaInstagram,
+  FaTwitter,
+  FaFacebook,
+  FaYoutube,
+  FaPinterest,
+  FaTimeline,
+} from "react-icons/fa6";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -149,50 +153,12 @@ const Footer = () => {
                 </p>
               </div>
               <div className="flex gap-1 md:gap-5 items-center cursor-pointer w-fit">
-                <div className="bg-white p-2 ">
-                  <Link href={"https://www.facebook.com"} target="_blank">
-                    <Image
-                      src={Facebook}
-                      alt="logo"
-                      className="hover:bg-orange-400 rounded-full "
-                    />
-                  </Link>
-                </div>
-                <div className="bg-white p-2">
-                  <Link href={"https://www.twitter.com"} target="_blank">
-                    <Image
-                      src={Twitter}
-                      alt="logo"
-                      className="hover:bg-orange-400 rounded-full  "
-                    />
-                  </Link>
-                </div>
-                <div className="bg-white p-2">
-                  <Link href={"https://www.instgram.com"} target="_blank">
-                    <Image
-                      src={Instagram}
-                      alt="logo"
-                      className="hover:bg-orange-400 rounded-full  "
-                    />
-                  </Link>
-                </div>
-                <div className="bg-white p-2">
-                  <Link href={"https://www.youtube.com"} target="_blank">
-                    <Image
-                      src={Youtube}
-                      alt="logo"
-                      className="hover:bg-orange-400 rounded-full  "
-                    />
-                  </Link>
-                </div>
-                <div className="bg-white p-2">
-                  <Link href={"https://www.pintrest.com"} target="_blank">
-                    <Image
-                      src={Pintrest}
-                      alt="logo"
-                      className="hover:bg-orange-400 rounded-full  "
-                    />
-                  </Link>
+                <div className="flex items-center gap-5 text-3xl ">
+                  <FaFacebook className="hover:text-orange-400 rounded-full " />
+                  <FaInstagram className="hover:text-orange-400 rounded-full " />
+                  <FaTwitter className="hover:text-orange-400 rounded-full " />
+                  <FaPinterest className="hover:text-orange-400 rounded-full " />
+                  <FaYoutube className="hover:text-orange-400 rounded-full " />
                 </div>
               </div>
             </div>

@@ -248,7 +248,7 @@ export default function Form() {
           </p>
         )}
       </form>
-      <ToastContainer className="bg-yellow-500 text-white" />
+      <ToastContainer />
     </div>
   );
 }

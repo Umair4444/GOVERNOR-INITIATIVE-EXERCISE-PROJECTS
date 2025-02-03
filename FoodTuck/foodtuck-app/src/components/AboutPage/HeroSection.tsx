@@ -3,7 +3,7 @@ import Image from "next/image";
 import image1 from "@/assets/dish/choose1.png";
 import image2 from "@/assets/dish/choose2.png";
 import image3 from "@/assets/dish/choose3.png";
-import play from "@/assets/logo/Play.png";
+import {FaPlay} from "react-icons/fa6"
 import MyButton from "@/components/ui/myButton";
 
 const AboutUsHeroSection = () => {
@@ -53,11 +53,7 @@ const AboutUsHeroSection = () => {
           <MyButton title="Show More" rounded="rounded-lg" />
           <div className="flex items-center gap-2">
             <div className="p-3 sm:p-4 rounded-full bg-yellow-500">
-              <Image
-                src={play}
-                alt="play"
-                className="object-cover w-5 sm:w-6 md:w-8 invert"
-              />
+             <FaPlay/>
             </div>
             <h4 className="font-semibold text-base sm:text-lg">Watch Video</h4>
           </div>
