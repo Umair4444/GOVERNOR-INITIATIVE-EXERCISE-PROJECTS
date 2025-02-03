@@ -97,12 +97,12 @@ export async function POST(request: NextRequest) {
       res.cookies.set("admin", "true", {
         path: "/",
         httpOnly: true,
-        maxAge: 86400,
-      }); // 1 day expiration
+        maxAge: 86400,  // 1 day expiration
+      });
       return res;
     } else {
       UsersList.push({ username, email });
-      console.log("Updated Users List:", UsersList);
+      // console.log("Updated Users List:", UsersList);
 
       return NextResponse.json({
         message: "User Not found",

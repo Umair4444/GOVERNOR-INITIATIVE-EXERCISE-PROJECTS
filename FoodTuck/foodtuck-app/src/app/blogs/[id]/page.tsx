@@ -39,7 +39,7 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className="p-4 flex flex-col md:flex-row gap-6 items-start">
+    <div className="p-4 flex flex-col md:flex-row gap-6 items-start mt-10">
       {/* Blog Image Section */}
       {foundblog.image && (
         <div className="w-full md:w-1/3">

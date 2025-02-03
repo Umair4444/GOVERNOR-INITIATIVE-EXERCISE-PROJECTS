@@ -8,7 +8,7 @@ import Providers from "./Providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FoodTuck Parlor",
+  title: "FoodTuck Express",
   description: "Online App for Foodies",
   icons: {
     icon: "/favicon.png", // Path to your favicon inside the `public` folder

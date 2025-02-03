@@ -45,7 +45,7 @@ const BlogList = () => {
   const totalPages = Math.ceil(blogs.length / blogsPerPage);
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 px-6">
+    <div className="flex flex-col md:flex-row gap-8 px-6 mt-10">
       {/* Main Blog List */}
       <div className="flex-1">
         {currentBlogs.map((res: IBlog) => (

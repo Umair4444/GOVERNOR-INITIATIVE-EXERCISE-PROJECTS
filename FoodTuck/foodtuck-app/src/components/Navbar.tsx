@@ -8,11 +8,16 @@ import { Hamburger } from "./Hamburger";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import type { IWish } from "@/app/utils/Types";
+import Search from "./Search/Search";
+import { RootState } from "@/app/Redux-toolkit/store";
 
 const Navbar = () => {
   const pathname = usePathname();
   const cart = useSelector((state: any) => state.cart);
   const wishlist = useSelector((state: { wish: IWish[] }) => state.wish);
+  const { products, status, error } = useSelector(
+    (state: RootState) => state.product
+  );
 
   return (
     <>
@@ -26,7 +31,8 @@ const Navbar = () => {
                 className="text-3xl font-bold font-helvetica mb-2"
               >
                 <h1 className="text-[#FF9F0D]">
-                  Food<span className="text-white">tuck</span>
+                  Food<span className="text-white">tuck</span>{" "}
+                  <span>Express</span>
                 </h1>
               </Link>
 
@@ -64,14 +70,8 @@ const Navbar = () => {
                 {/* Search and Icons */}
                 <div className="flex items-center gap-4 w-full lg:w-auto">
                   {/* Search Bar */}
-                  <div className="relative flex-grow lg:w-[25rem] ">
-                    <input
-                      type="text"
-                      placeholder="Search"
-                      className="w-full rounded-full border-2 border-[#FF9F0D] bg-transparent  py-2 pl-4 pr-10 text-sm text-white placeholder-white outline-none"
-                    />
-                    <FaSearch className="absolute right-3 top-1/2 -translate-y-1/2 transform text-white" />
-                  </div>
+                  {/* Search Bar */}
+                  <Search products={products} />
 
                   {/* Icons */}
                   <div className="flex items-center gap-3 text-xl text-white">
