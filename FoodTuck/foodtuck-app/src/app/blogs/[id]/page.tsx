@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { IBlog } from "@/app/utils/Types";
+import { CommentForm } from "@/components/Blog/CommentsForm";
 
 const BlogPage = ({ params }: { params: { id: string } }) => {
   const dispatch = useDispatch<AppDispatch>();
@@ -39,33 +40,38 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className="p-4 flex flex-col md:flex-row gap-6 items-start mt-10">
-      {/* Blog Image Section */}
-      {foundblog.image && (
-        <div className="w-full md:w-1/3">
-          <Image
-            src={foundblog.image}
-            alt={foundblog.title}
-            width={500}
-            height={500}
-            className="rounded-lg object-cover"
-          />
-        </div>
-      )}
+    <>
+      <div className="p-4 flex flex-col md:flex-row gap-6 items-start mt-10">
+        {/* Blog Image Section */}
+        {foundblog.image && (
+          <div className="w-full md:w-1/3">
+            <Image
+              src={foundblog.image}
+              alt={foundblog.title}
+              width={500}
+              height={500}
+              className="rounded-lg object-cover"
+            />
+          </div>
+        )}
 
-      {/* Blog Text Section */}
-      <div className="flex-1">
-        <h1 className="text-5xl text-white mb-4">{foundblog.title}</h1>
-        <p className="text-lg text-gray-400 mb-4">By {foundblog.author}</p>
-        <p className="text-white leading-7">{foundblog.content}</p>
-        <button
-          className="mt-5 px-7 py-3 rounded-lg bg-yellow-500 font-bold text-white"
-          onClick={() => router.back()}
-        >
-          Go Back
-        </button>
+        {/* Blog Text Section */}
+        <div className="flex-1">
+          <h1 className="text-5xl text-white mb-4">{foundblog.title}</h1>
+          <p className="text-lg text-gray-400 mb-4">By {foundblog.author}</p>
+          <p className="text-white leading-7">{foundblog.content}</p>
+          <button
+            className="mt-5 px-7 py-3 rounded-lg bg-yellow-500 font-bold text-white"
+            onClick={() => router.back()}
+          >
+            Go Back
+          </button>
+        </div>
       </div>
-    </div>
+      <div className="mt-4 px-5">
+        <CommentForm />
+      </div>
+    </>
   );
 };
 

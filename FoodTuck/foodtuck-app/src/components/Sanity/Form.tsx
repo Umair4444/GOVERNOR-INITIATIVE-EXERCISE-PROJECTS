@@ -45,8 +45,8 @@ export default function Form() {
         available,
         image,
       });
-
       setSuccess(true);
+
       // alert("Food item uploaded successfully!");
       toast.success("Added to Sanity Studio Succesfully!", {
         position: "bottom-right",

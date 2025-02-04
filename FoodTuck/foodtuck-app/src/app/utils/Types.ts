@@ -95,6 +95,7 @@ export interface IBlog {
     id: number;
     user: string;
     message: string;
+    rating: string;
     createdAt: string;
   }[];
 }
