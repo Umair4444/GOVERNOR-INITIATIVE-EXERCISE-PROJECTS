@@ -65,7 +65,7 @@ export function CommentForm() {
 
   // Handle avatar file input
   const handleAvatarChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+    const file : any = event.target.files?.[0];
     if (file) {
       setAvatarPreview(URL.createObjectURL(file));
       form.setValue("avatar", file); // Set the file directly
