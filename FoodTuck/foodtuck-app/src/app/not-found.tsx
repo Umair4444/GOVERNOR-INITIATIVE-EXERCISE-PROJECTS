@@ -20,7 +20,16 @@ const Error404 = () => {
             Menwhile, cheek out these fresh ideas:
           </p>
           <MyButton
-            title="Go To Home"
+            title="Go Back"
+            rounded="rounded-md"
+            xpadding="px-10"
+            ypadding="py-2"
+            onclick={() => {
+              router.back();
+            }}
+          />
+          <MyButton
+            title="Go Home"
             rounded="rounded-md"
             xpadding="px-10"
             ypadding="py-2"

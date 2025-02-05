@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa"; // For loading spinner
+import mrx from "@/assets/fullstar.png";
 
 interface Comment {
   id: number;
@@ -45,7 +46,7 @@ export function CommentList() {
     } else {
       fetchComments(); // Fetch from API if nothing in localStorage
     }
-    const interval = setInterval(fetchComments, 1000000000000); // Fetch every  10 seconds
+    const interval = setInterval(fetchComments, 5000); // Fetch every  10 seconds
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
@@ -63,17 +64,24 @@ export function CommentList() {
         </p>
       ) : (
         comments.map((comment: Comment) => (
-          <div key={comment.id} className="p-4 border rounded-lg shadow-md">
+          <div
+            key={comment.id}
+            className="p-4 mx-4 my-5  border rounded-lg shadow-md"
+          >
             <div className="flex items-center space-x-4">
               {comment.avatar ? (
                 <Image
                   src={comment.avatar}
                   alt="Avatar"
+                  width={100}
+                  height={100}
                   className="w-10 h-10 rounded-full object-cover"
                 />
               ) : (
                 <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
-                  <span className="text-white">No Avatar</span>
+                  <span className="text-white">
+                    <Image src={mrx} alt="mrx" width={200} height={200} />
+                  </span>
                 </div>
               )}
               <div>
