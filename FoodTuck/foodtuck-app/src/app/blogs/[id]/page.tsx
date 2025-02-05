@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { IBlog } from "@/app/utils/Types";
 import { CommentForm } from "@/components/Blog/CommentsForm";
+import { CommentList } from "@/components/Blog/CommentList";
 
 const BlogPage = ({ params }: { params: { id: string } }) => {
   const dispatch = useDispatch<AppDispatch>();
@@ -22,16 +23,16 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
   }, [dispatch, status]);
 
   if (status === "loading")
-    return <p className="text-lg text-gray-400">Loading blogs...</p>;
+    return <p className="text-lg h-screen text-gray-400">Loading blogs...</p>;
   if (status === "failed")
-    return <p className="text-lg text-red-500">Error loading blog: {error}</p>;
+    return <p className="text-lg text-red-500 h-screen">Error loading blog: {error}</p>;
 
   const foundblog = blogs.find((blog: IBlog) => params.id === blog.slug);
 
   if (!foundblog) {
     return (
-      <div>
-        <h1 className="text-3xl text-white">Blog Not Found</h1>
+      <div className="h-screen">
+        <h1 className="text-3xl text-white ">Blog Not Found</h1>
         <p className="text-gray-400">
           The blog you are looking for does not exist or has been removed.
         </p>
@@ -71,6 +72,7 @@ const BlogPage = ({ params }: { params: { id: string } }) => {
       <div className="mt-4 px-5">
         <CommentForm />
       </div>
+      <CommentList />
     </>
   );
 };

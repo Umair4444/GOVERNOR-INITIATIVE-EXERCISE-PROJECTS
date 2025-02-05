@@ -32,9 +32,9 @@ const BlogList = () => {
   }, [dispatch, status]);
 
   if (status === "loading")
-    return <p className="text-center">Loading blogs...</p>;
+    return <p className="text-center h-screen">Loading blogs...</p>;
   if (status === "failed")
-    return <p className="text-center text-red-500">Error: {error}</p>;
+    return <p className="text-center text-red-500 h-screen">Error: {error}</p>;
 
   // Handle page change
   const handlePageChange = (page: number) => {

@@ -34,4 +34,10 @@
 7. I am using middleware for users to not enter admin panel without login as admin and redirect all users to home
 8. Only admin can add products to sanity.
 
+<!-- CLOUDINARY  -->
 
+1. The user selects an image file to upload via the avatar input.
+2. The handleAvatarChange function generates a preview and uploads the image to Cloudinary.
+3. The uploadToCloudinary function handles the upload to Cloudinary and returns the image's secure URL.
+4. The form's avatar field is updated with the Cloudinary URL.
+5. The file input is reset to allow for further image selections.
