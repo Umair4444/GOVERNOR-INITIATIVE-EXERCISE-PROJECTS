@@ -13,8 +13,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 // Define the form schema
 const formSchema = z.object({
@@ -141,7 +142,7 @@ export function CommentForm() {
           {/* Avatar Upload */}
           <div className="flex justify-center">
             {avatarPreview ? (
-              <img
+              <Image
                 src={avatarPreview}
                 alt="Avatar Preview"
                 className="w-32 h-32 rounded-full object-cover"

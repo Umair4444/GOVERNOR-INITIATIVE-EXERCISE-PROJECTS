@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa"; // For loading spinner
 
@@ -65,7 +66,7 @@ export function CommentList() {
           <div key={comment.id} className="p-4 border rounded-lg shadow-md">
             <div className="flex items-center space-x-4">
               {comment.avatar ? (
-                <img
+                <Image
                   src={comment.avatar}
                   alt="Avatar"
                   className="w-10 h-10 rounded-full object-cover"
