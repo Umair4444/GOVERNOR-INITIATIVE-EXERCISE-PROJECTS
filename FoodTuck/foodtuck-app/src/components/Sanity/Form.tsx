@@ -28,6 +28,27 @@ export default function Form() {
       return;
     }
 
+    // Optional: Validate price and discount to be positive
+    if (parseFloat(price) <= 0) {
+      setError("Price must be a positive number.");
+      return;
+    }
+    if (parseFloat(discount) < 0) {
+      setError("Discount cannot be negative.");
+      return;
+    }
+
+    // Validate the file type and size
+    if (image && !image.type.startsWith("image/")) {
+      setError("Please upload a valid image file.");
+      return;
+    }
+    if (image && image.size > 5 * 1024 * 1024) {
+      // Limit size to 5MB
+      setError("File size should not exceed 5MB.");
+      return;
+    }
+
     setLoading(true);
     setError(null);
     setSuccess(false);
@@ -47,8 +68,8 @@ export default function Form() {
       });
       setSuccess(true);
 
-      // alert("Food item uploaded successfully!");
-      toast.success("Added to Sanity Studio Succesfully!", {
+      // Notify the user
+      toast.success("Added to Sanity Studio Successfully!", {
         position: "bottom-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -219,7 +240,6 @@ export default function Form() {
           />
           <label className="ml-2 block text-sm text-gray-700">Available</label>
         </div>
-
         {/* Submit Button */}
         <button
           type="submit"
@@ -236,12 +256,10 @@ export default function Form() {
           )}
         </button>
 
-        {/* Error Message */}
+        {/* Error and Success Messages */}
         {error && (
           <p className="text-red-500 text-sm text-center mt-4">{error}</p>
         )}
-
-        {/* Success Message */}
         {success && (
           <p className="text-green-500 text-sm text-center mt-4">
             Food item uploaded successfully!

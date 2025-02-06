@@ -121,6 +121,7 @@ export function CommentForm() {
         setSelectedRating(1); // Reset the rating
         setAvatarFile(null); // Clear the file
         console.log("✅ Submission successful:", responseData);
+        router.refresh(); // refresh
       } else {
         // Handle submission failure
         console.error("❌ Submission failed:", responseData);
