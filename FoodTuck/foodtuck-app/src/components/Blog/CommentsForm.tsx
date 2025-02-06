@@ -23,7 +23,7 @@ const formSchema = z.object({
   profession: z.string().default("unknown"),
   comment: z.string().min(5, "Comment must be at least 5 characters."),
   rating: z.number().min(1, "Rating must be between 1 and 5."),
-  avatar: z.string().optional(),
+  avatar: z.string().optional(), // Only store URL as string
 });
 
 export function CommentForm() {
@@ -41,6 +41,7 @@ export function CommentForm() {
   const router = useRouter();
   const [selectedRating, setSelectedRating] = useState(1); // Set default rating to 1
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
+  const [avatarFile, setAvatarFile] = useState<File | null>(null); // Track the file before uploading
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Upload image to Cloudinary
@@ -67,7 +68,6 @@ export function CommentForm() {
       );
 
       const data = await response.json();
-      console.log("cloud", data);
       if (data.secure_url) {
         return data.secure_url;
       } else {
@@ -81,24 +81,27 @@ export function CommentForm() {
   };
 
   // Handle avatar file input
-  const handleAvatarChange = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleAvatarChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    setAvatarPreview(URL.createObjectURL(file));
-    const imageUrl = await uploadToCloudinary(file);
-    if (imageUrl) {
-      form.setValue("avatar", imageUrl);
-    }
+    setAvatarPreview(URL.createObjectURL(file)); // Preview the image
+    setAvatarFile(file); // Temporarily store the file
+    form.setValue("avatar", ""); // Clear avatar field until it's uploaded
     event.target.value = ""; // Reset the file input
   };
 
   // Handle form submission
-
   const onSubmit = async (data: any) => {
     setIsSubmitting(true); // Start loading
+
+    // If avatar is a file, upload it and set the URL in form
+    if (avatarFile) {
+      const avatarUrl = await uploadToCloudinary(avatarFile);
+      if (avatarUrl) {
+        data.avatar = avatarUrl; // Store the Cloudinary URL in the form
+      }
+    }
 
     try {
       const response = await fetch("/api/comments", {
@@ -116,6 +119,7 @@ export function CommentForm() {
         form.reset(); // Reset the form fields
         setAvatarPreview(null); // Clear the avatar preview
         setSelectedRating(1); // Reset the rating
+        setAvatarFile(null); // Clear the file
         console.log("✅ Submission successful:", responseData);
       } else {
         // Handle submission failure
@@ -128,7 +132,6 @@ export function CommentForm() {
       alert("An unexpected error occurred. Please try again.");
     } finally {
       setIsSubmitting(false); // Stop loading
-      router.refresh(); // Refresh to fetch tshe new comment list
     }
   };
 
@@ -143,6 +146,8 @@ export function CommentForm() {
           <div className="flex justify-center">
             {avatarPreview ? (
               <Image
+                width={200}
+                height={200}
                 src={avatarPreview}
                 alt="Avatar Preview"
                 className="w-32 h-32 rounded-full object-cover"

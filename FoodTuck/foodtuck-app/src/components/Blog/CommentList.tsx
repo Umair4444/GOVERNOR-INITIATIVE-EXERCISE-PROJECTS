@@ -73,8 +73,8 @@ export function CommentList() {
                 <Image
                   src={comment.avatar}
                   alt="Avatar"
-                  width={100}
-                  height={100}
+                  width={200}
+                  height={200}
                   className="w-10 h-10 rounded-full object-cover"
                 />
               ) : (

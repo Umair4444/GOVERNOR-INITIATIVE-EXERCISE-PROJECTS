@@ -4,7 +4,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.sanity.io",
+        hostname: "cdn.sanity.io", // Use a string instead of an array
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com", // Use a string here as well
       },
     ],
   },
