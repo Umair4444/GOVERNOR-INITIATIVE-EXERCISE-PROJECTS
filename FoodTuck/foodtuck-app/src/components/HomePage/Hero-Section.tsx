@@ -18,7 +18,7 @@ import SideLogoBar from "../ui/side-logo-bar";
 export function HeroSection() {
   const [data, setData] = useState<any[]>([]);
   const autoplayPlugin = useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export function HeroSection() {
         </div>
 
         {data.length === 0 ? (
-          <div className="text-center mt-10">
+          <div className="text-center w-full h-screen pt-[25%]">
             No items to display in the carousel.
           </div>
         ) : (

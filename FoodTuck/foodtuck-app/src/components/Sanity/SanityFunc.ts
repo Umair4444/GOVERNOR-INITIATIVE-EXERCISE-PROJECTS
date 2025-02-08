@@ -1,28 +1,30 @@
-import { client } from "@/sanity/lib/client";
+import { serverClient } from "@/sanity/lib/serverClient";
 
-export const uploadImage = async (file: File) => {
+const uploadImage = async (file: File): Promise<string | null> => {
   try {
-    const imageAsset = await client.assets.upload("image", file);
+    const imageAsset = await serverClient.assets.upload("image", file);
     return imageAsset._id;
   } catch (error) {
     console.error("❌ Image upload failed:", error);
-    return null;
+    throw new Error("Image upload failed.");
   }
 };
 
-export const createFoodItem = async (foodData: any) => {
-  const imageId = await uploadImage(foodData.image);
-  if (!imageId) return;
-
-  //   const slug = foodData.title.toLowerCase().replace(/\s+/g, "-");
-
-  // Ensure slug is always a valid string
-  const slug = foodData.title
-    ? foodData.title.toLowerCase().replace(/\s+/g, "-")
-    : `food-${Date.now()}`;
-
+export const createFoodItem = async (foodData: any): Promise<void> => {
   try {
-    const response = await client.create({
+    // Step 1: Upload the image and get the image ID
+    const imageId = await uploadImage(foodData.image);
+    if (!imageId) {
+      throw new Error("Image upload failed.");
+    }
+
+    // Step 2: Prepare the slug (ensure it's always valid)
+    const slug = foodData.title
+      ? foodData.title.toLowerCase().replace(/\s+/g, "-")
+      : `food-${Date.now()}`;
+
+    // Step 3: Create food item in Sanity
+    const response = await serverClient.create({
       _type: "food",
       title: foodData.title,
       slug: { _type: "slug", current: slug },
@@ -40,5 +42,6 @@ export const createFoodItem = async (foodData: any) => {
     console.log("✅ Food item created:", response);
   } catch (error) {
     console.error("❌ Error creating food item:", error);
+    throw new Error("Error creating food item in Sanity.");
   }
 };
