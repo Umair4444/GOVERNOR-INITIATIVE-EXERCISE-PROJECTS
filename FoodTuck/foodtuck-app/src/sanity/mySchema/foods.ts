@@ -1,4 +1,4 @@
- const food = {
+const food = {
   name: "food",
   type: "document",
   title: "Food",
@@ -34,6 +34,23 @@
       type: "number",
       title: "Discount",
       description: "What discount are you oferring?",
+    },
+    {
+      name: "mealoftheday",
+      title: "Meal of the Day",
+      type: "string",
+      options: {
+        list: [
+          { title: "Breakfast", value: "breakfast" },
+          { title: "Lunch", value: "lunch" },
+          { title: "Dinner", value: "dinner" },
+          { title: "Snack", value: "snack" },
+          { title: "Soup", value: "soup" },
+          { title: "Drinks", value: "drinks" },
+          { title: "Dessert", value: "dessert" },
+        ],
+        layout: "dropdown", // Optional: makes it a selection
+      },
     },
     {
       name: "tags",

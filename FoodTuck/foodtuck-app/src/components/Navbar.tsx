@@ -2,7 +2,7 @@
 
 import { BsCart4 } from "react-icons/bs";
 import { FaUser } from "react-icons/fa6";
-import { FaSearch, FaHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import Link from "next/link";
 import { Hamburger } from "./Hamburger";
 import { usePathname } from "next/navigation";
@@ -45,31 +45,25 @@ const Navbar = () => {
                 {/* Navigation Links - Hidden on mobile, visible on larger screens */}
                 <div className="hidden lg:block ">
                   <ul className="flex flex-wrap items-center justify-center gap-4 lg:text-lg text-nowrap text-white">
-                    {[
-                      "Home",
-                      "Deals",
-                      "Blogs",
-                      "Menu",
-                      "About",
-                      "Shop",
-                      "Contact",
-                    ].map((item) => (
-                      <li key={item} className="hover:text-yellow-600">
-                        <Link
-                          href={
-                            item === "Home" ? "/" : `/${item.toLowerCase()}`
-                          }
-                        >
-                          {item}
-                        </Link>
-                      </li>
-                    ))}
+                    {["Home", "Deals", "Blogs", "Menu", "About", "Shop"].map(
+                      (item) => (
+                        <li key={item} className="hover:text-yellow-600">
+                          <Link
+                            href={
+                              item === "Home" ? "/" : `/${item.toLowerCase()}`
+                            }
+                          >
+                            {item}
+                          </Link>
+                        </li>
+                      )
+                    )}
+                    <Link href={"/contact-us"}>Contact Us</Link>
                   </ul>
                 </div>
 
                 {/* Search and Icons */}
                 <div className="flex items-center gap-4 w-full lg:w-auto">
-                  {/* Search Bar */}
                   {/* Search Bar */}
                   <Search products={products} />
 

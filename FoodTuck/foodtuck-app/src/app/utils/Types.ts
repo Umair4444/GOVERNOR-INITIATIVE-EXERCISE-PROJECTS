@@ -4,6 +4,8 @@ export interface IProduct {
   title: string;
   slug: string;
   category: string;
+  mealoftheday: string;
+  chef: string;
   available: boolean;
   description: string;
   image: string;

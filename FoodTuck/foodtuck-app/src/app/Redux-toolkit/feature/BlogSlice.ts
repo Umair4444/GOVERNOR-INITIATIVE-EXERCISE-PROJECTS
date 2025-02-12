@@ -40,7 +40,7 @@ export const fetchBlogs = createAsyncThunk("blogs/fetchBlogs", async () => {
     summary,
     author,
     "image": image.asset->url,
-    tags,
+    tags,s
     category,
     _createdAt,
     isPublished

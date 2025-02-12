@@ -5,6 +5,7 @@ import ProductSlice from "./feature/productSlice";
 import cartSlice from "./feature/cartSlice";
 import blogSlice from "./feature/BlogSlice";
 import wishSlice from "./feature/wishSlice";
+import { logger } from "redux-logger";
 
 const persistConfig = {
   key: "root",
@@ -27,6 +28,7 @@ export const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: false,
     }),
+  // .concat(logger), // stops uploading data but shows console data
 });
 
 export type RootState = ReturnType<typeof store.getState>;

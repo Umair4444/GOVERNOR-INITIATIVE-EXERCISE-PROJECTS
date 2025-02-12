@@ -187,7 +187,6 @@ const initialState: ProductState = {
   error: null,
 };
 
-// Fetch products from Sanity
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
@@ -196,6 +195,8 @@ export const fetchProducts = createAsyncThunk(
       title,
       slug,
       category,
+      mealoftheday,
+      chef,
       available,
       description,
       toppings,
@@ -209,7 +210,7 @@ export const fetchProducts = createAsyncThunk(
     // Disable caching to ensure fresh data
     const products = await client.fetch(query, {}, { cache: "no-cache" });
 
-    return products.map((item: any) => ({
+    return products.map((item:  any) => ({
       id: item._id,
       title: item.title,
       slug: item.slug.current,
@@ -218,6 +219,8 @@ export const fetchProducts = createAsyncThunk(
       image: item.image,
       tags: item.tags,
       category: item.category,
+      mealoftheday: item.mealoftheday, // ✅ Ensure it's always a string
+      chef: item.chef ,
       flavors: item.flavors,
       toppings: item.toppings,
       price: item.price,
@@ -232,19 +235,25 @@ export const subscribeToProducts = (dispatch: any) => {
 
   const query = `*[_type == "food"]`;
 
-  const subscription = client.listen(query).subscribe(
-    (update) => {
-      console.log("🔄 Sanity Data Updated:", update);
-      dispatch(fetchProducts()); // Fetch updated products when data changes
-    },
-    (error) => {
-      console.error("❌ Subscription Error:", error);
-    }
-  );
+  const subscription = client.listen(query).subscribe({
+    next: (update) => {
+      console.log("🔔 API Data Changed:", update);
 
+      // Only fetch new data when relevant changes happen
+      if (update.transition === "update" || update.transition === "appear") {
+        dispatch(fetchProducts()); // Fetch updated data
+      }
+    },
+    error: (error) => {
+      console.error("❌ Subscription Error:", error);
+    },
+    complete: () => {
+      console.log("✅ Subscription Completed");
+    },
+  });
   return () => {
-    subscription.unsubscribe(); // Cleanup function
-    console.log("Unsubscribing...");
+    subscription.unsubscribe();
+    console.log("❌ Unsubscribed from API updates");
   };
 };
 

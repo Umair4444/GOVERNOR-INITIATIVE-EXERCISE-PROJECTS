@@ -1,103 +1,105 @@
+"use client";
 import { Great_Vibes } from "next/font/google";
-import React from "react";
-import food from "@/assets/dish/fooditems4.png";
-import food1 from "@/assets/dish/Image.png";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/Redux-toolkit/store";
+import { IProduct } from "@/app/utils/Types";
+import Link from "next/link";
 
 const great_Vibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
+
 const ChefMenu = () => {
+  const [activeTab, setActiveTab] = useState("Breakfast");
+
+  const { products } = useSelector((state: RootState) => state.product);
+
+  const tabCategories = [
+    "Breakfast",
+    "Lunch",
+    "Dinner",
+    "Snack",
+    "Soup",
+    "Drinks",
+    "Dessert",
+  ];
+
+  const filteredProducts: IProduct[] = products.filter(
+    (res) => res.mealoftheday?.toLowerCase() === activeTab.toLowerCase()
+  );
+
   return (
-    <div>
-      <div>
-        <div className="flex flex-col items-center gap-6 text-center mt-5 md:mt-10 lg:mt-20">
-          <h3 className={`${great_Vibes.className} text-4xl text-[#FF9F0D] `}>
-            Food Gallery
-          </h3>
-          <h1 className="text-5xl font-bold">
-            <span className="text-[#FF9F0D] font-helvetica">Ch</span>oose Food
-            Itmes
-          </h1>
-        </div>
-
-        <Tabs defaultValue="breakfast" className="mt-10">
-          <TabsList className="bg-black text-white flex justify-evenly items-center gap-6 text-xl font-bold uppercase ">
-            <TabsTrigger
-              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
-              value="breakfast"
-            >
-              Breakfast
-            </TabsTrigger>
-            <TabsTrigger
-              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
-              value="lunch"
-            >
-              Lunch
-            </TabsTrigger>
-            <TabsTrigger
-              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
-              value="dinner"
-            >
-              Dinner
-            </TabsTrigger>
-            <TabsTrigger
-              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
-              value="snacks"
-            >
-              Snacks
-            </TabsTrigger>
-            <TabsTrigger
-              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
-              value="soups"
-            >
-              Soups
-            </TabsTrigger>
-            <TabsTrigger
-              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
-              value="drinks"
-            >
-              Drinks
-            </TabsTrigger>
-            <TabsTrigger
-              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black"
-              value="deserts"
-            >
-              Deserts
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent
-            value="breakfast"
-            className="mt-5 px-10 flex justify-between items-start"
-          >
-            <div className="w-72">
-              <Image src={food1} alt="main image" />
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div className="text-white grid grid-cols-2 gap-x-24 gap-y-4">
-                <div className="flex gap-4">
-                  <div className="w-16">
-                    <Image src={food} alt="food" />
-                  </div>
-                  <div>
-                    <h1>Lettuce Leaf</h1>
-                    <p>description of dish</p>
-                    <h2>Price of dish</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-          <TabsContent value="lunch"></TabsContent>
-          <TabsContent value="dinner"></TabsContent>
-          <TabsContent value="snacks"></TabsContent>
-          <TabsContent value="soups"></TabsContent>
-          <TabsContent value="drinks"></TabsContent>
-          <TabsContent value="deserts"></TabsContent>
-        </Tabs>
-
-        <div></div>
+    <div className="px-4 sm:px-8 lg:px-16">
+      <div className="flex flex-col items-center gap-4 text-center mt-5 md:mt-10 lg:mt-20">
+        <h3
+          className={`${great_Vibes.className} text-3xl sm:text-4xl text-[#FF9F0D]`}
+        >
+          Food Gallery
+        </h3>
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold">
+          <span className="text-[#FF9F0D] font-helvetica">Ch</span>oose Food
+          Items
+        </h1>
       </div>
+
+      {/* Tabs */}
+      <Tabs defaultValue={activeTab} className="mt-10 w-full">
+        <TabsList className="bg-black text-white flex justify-center gap-2 md:gap-6 lg:gap-14 p-2">
+          {tabCategories.map((meal) => (
+            <TabsTrigger
+              key={meal}
+              onClick={() => setActiveTab(meal)}
+              className="py-2 px-4 rounded-md transition-colors hover:bg-black hover:text-yellow-500 text-base sm:text-lg data-[state=active]:bg-[#FF9F0D] data-[state=active]:text-black "
+              value={meal}
+            >
+              {meal}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+
+        {/* Products Grid */}
+        <TabsContent
+          value={activeTab}
+          className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"
+        >
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product: IProduct) => (
+              <div
+                key={product.id}
+                className=" py-1 rounded-lg w-full border border-yellow-800 hover:shadow-yellow-500 shadow-md transition duration-500 "
+              >
+                <Link href={`/menu/${product.slug}`}>
+                  <div className="flex items-center gap-x-2">
+                    <div className="w-20 h-20 relative">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-md"
+                      />
+                    </div>
+                    <div className="text-white">
+                      <h1 className="font-semibold">{product.title}</h1>
+                      <p className="text-sm text-gray-300">
+                        {product.description.slice(0, 40)}...
+                      </p>
+                      <h2 className="text-[#FF9F0D] font-semibold">
+                        ${product.price}
+                      </h2>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <p className="text-white text-center w-full text-lg sm:text-xl italic mt-5">
+              No items available for {activeTab}.
+            </p>
+          )}
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };
