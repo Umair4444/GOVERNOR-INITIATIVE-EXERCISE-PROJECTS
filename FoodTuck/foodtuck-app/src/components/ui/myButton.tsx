@@ -10,7 +10,7 @@ const MyButton = (props: any) => {
             }  ${props.xpadding || "px-12"} ${props.ypadding || "py-4"} ${
               props.border || "0"
             } `}
-            type="button"
+            type={props.type ||"button"}
             onClick={props.onClick}
           >
             {props.title}
